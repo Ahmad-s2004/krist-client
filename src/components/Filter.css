@@ -1,0 +1,95 @@
+.filter {
+    overflow-y: scroll; /* Enable vertical scrollbar */
+    height: 500px; /* Adjust height as needed */
+    scrollbar-width: thin;
+    border: 1px solid #ccc; /* Optional: Add border for visual clarity */
+    padding: 10px; /* Optional: Add padding for spacing */
+  }
+  
+  .filter li {
+    list-style-type: none;
+    padding: 15px 0 30px; 
+    border-bottom: 1px solid rgb(131, 131, 131);
+    cursor: pointer;
+  }
+  
+  .filter li a {
+    text-decoration: none; /* Remove underline from links */
+    color: #3b3b3b; /* Optional: Set link color */
+  }
+  .filter>li>h6{
+    color: #000000 ;
+    font-weight: 500;
+    font-size: 0.8rem;
+  }
+  .filter li a:hover {
+    color: #000000; /* Optional: Change link color on hover */
+  }
+
+
+.colorScroll{
+    overflow-y: scroll; /* Enable vertical scrollbar */
+    height: 100px; /* Adjust height as needed */
+    scrollbar-width: thin;
+    width: 100%;
+    padding-left: 20px;
+
+}
+.colorScroll>div{
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-top: 3px;
+}
+.colorScroll>div>span{
+    width: 5px;
+    height: 5px;
+    padding: 1px 9px;
+    border-radius: 50%;
+    /* background: blue; */
+    /* color: blue; */
+    margin-right: 3px;
+}
+  .range-input{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(to right, #b3b3b3, #c2c1c1) no-repeat center/100% 2px;
+    outline: none;
+    /* border-radius: 5px; */
+    cursor: pointer;
+  }
+  
+  .range-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 5px;
+    height: 15px;
+    background: #202020;
+    /* border-radius: 50%; */
+    cursor: pointer;
+  }
+  
+  .range-input::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #555;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .range-input::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    background: #555;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .range-input:focus {
+    outline: none;
+    /* box-shadow: 0 0 1px #555; Example focus effect */
+  }
+  

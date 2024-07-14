@@ -1,0 +1,8 @@
+{
+    "components": {
+      "alert-dialog": {
+        "path": "./src/components/ui/alert-dialog.tsx"
+      }
+    }
+  }
+  
