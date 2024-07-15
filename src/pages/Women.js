@@ -5,7 +5,6 @@ import Footer from '../components/Footer';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import '../components/Filter.css';
 import CloseIcon from '@mui/icons-material/Close';
-// import WomenDetail from './WomenDetail';
 
 const Women = () => {
   const [product, setProduct] = useState([]);
@@ -19,6 +18,7 @@ const Women = () => {
     const res = await fetch('http://krist-server.vercel.app/product/getWomen');
     const data = await res.json();
     setProduct(data);
+    console.log(data)
     setLoading(true);
   };
 
