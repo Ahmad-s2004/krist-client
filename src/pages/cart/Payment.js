@@ -21,8 +21,8 @@ const Payment = () => {
 
     let navigate = useNavigate()
 
-    let handelSubmit = async (e) => {
-        e.preventDefault();
+    let handelSubmit = async () => {
+        // e.preventDefault();
         // console.log("handelChange")
         // try {
         //     let res = await axios.post('http://krist-server.vercel.app/post/getCard', {
@@ -187,7 +187,7 @@ const Payment = () => {
 
 
 
-                                <button className="btn btn-dark w-100 mt-2" onClick={handelSubmit}>Place order</button>
+                                <button className="btn btn-dark w-100 mt-2" onClick={()=>handelSubmit()}>Place order</button>
                             </div>
                         </div>
                     </div>
