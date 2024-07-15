@@ -15,7 +15,7 @@ const Kids = () => {
   const showSidebar = () => setSidebar(!sidebar);
 
   const fetchData = async () => {
-    const res = await fetch('http://localhost:5050/product/getKids');
+    const res = await fetch('https://krist-server.vercel.app/product/getKids');
     const data = await res.json();
     setProducts(data);
     setLoading(false);
@@ -143,8 +143,8 @@ const Kids = () => {
                 <div className="card">
                   <div className="card-img-container">
                     <div className="sale my-auto">{Number(x.salePercent)}%</div>
-                    <img src={`http://localhost:5050/${x.gallery[0].img1}`} className="card-img-top primary" alt="Primary" />
-                    <img src={`http://localhost:5050/${x.gallery[0].img2}`} className="card-img-top secondary" alt="Secondary" />
+                    <img src={`https://krist-server.vercel.app/${x.gallery[0].img1}`} className="card-img-top primary" alt="Primary" />
+                    <img src={`https://krist-server.vercel.app/${x.gallery[0].img2}`} className="card-img-top secondary" alt="Secondary" />
                     <Link className="button" to={`/getKids/${x._id}`}>Quick View</Link>
                   </div>
                   <div className="card-body">

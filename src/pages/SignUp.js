@@ -25,7 +25,7 @@ const SignUp = () => {
   
   const sendRequest = async () => {
     try {
-      const res = await axios.post('http://localhost:5050/post/signup', {
+      const res = await axios.post('https://krist-server.vercel.app//post/signup', {
         name: inputs.name,
         email: inputs.email,
         password: inputs.password,

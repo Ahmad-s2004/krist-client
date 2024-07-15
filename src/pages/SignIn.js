@@ -27,7 +27,7 @@ const setCookie = (name, value) => {
 
   const submit = async() =>{
     try {
-      let res = await axios.post("http://localhost:5050/post/signin", {
+      let res = await axios.post("https://krist-server.vercel.app/post/signin", {
       email: inputs.email,
       password: inputs.password
     })

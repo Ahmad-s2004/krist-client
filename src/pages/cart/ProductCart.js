@@ -54,7 +54,7 @@ const ProductCart = () => {
                 return (
                   <>
                     <div className="col-lg-5 col-12 d-flex cartPart my-4">
-                      <img src={`http://localhost:5050/${x.gallery[0].img1}`} style={{ width: "100px", height: "100px" }} alt="" />
+                      <img src={`https://krist-server.vercel.app/${x.gallery[0].img1}`} style={{ width: "100px", height: "100px" }} alt="" />
                       <span className='ps-2 pt-2 cartDetail'>
                         <p className='py-1'>{x.title}</p>
                         <p className='py-1 greyColor'>Color : {x.color[0]}</p>

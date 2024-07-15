@@ -19,7 +19,7 @@ const KidsDetail = () => {
 
 
     let fetchData = async () => {
-        let res = await fetch(`http://localhost:5050/product/getKids/${_id}`)
+        let res = await fetch(`https://krist-server.vercel.app/product/getKids/${_id}`)
         res = await res.json()
         setProduct(res)
         setLoading(true)
@@ -55,10 +55,10 @@ const KidsDetail = () => {
                 <div className="col-lg-6 col-md-6 col-12 ps-3">
                     <Slider {...settings}>
                         <div>
-                            {product.gallery ? <img src={`http://localhost:5050/${product.gallery[0].img1}`} alt="" /> : null}
+                            {product.gallery ? <img src={`https://krist-server.vercel.app/${product.gallery[0].img1}`} alt="" /> : null}
                         </div>
                         <div>
-                            {product.gallery ? <img src={`http://localhost:5050/${product.gallery[0].img2}`} alt="" /> : null}
+                            {product.gallery ? <img src={`https://krist-server.vercel.app/${product.gallery[0].img2}`} alt="" /> : null}
 
                         </div>
                     </Slider>

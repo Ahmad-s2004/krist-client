@@ -10,7 +10,7 @@ const SearchProducts = () => {
 
   useEffect(() => {
     let fetchData = async () => {
-      let res = await fetch(`http://localhost:5050/product/getProducts?search=${search}`)
+      let res = await fetch(`https://krist-server.vercel.app/product/getProducts?search=${search}`)
       res = await res.json()
       setProduct(res)
     }
@@ -30,8 +30,8 @@ let ShowProducts = () =>{
                   <div className="card">
                     <div className="card-img-container">
                       <div className="sale my-auto">{Number(x.salePercent)}%</div>
-                      <img src={`http://localhost:5050/${x.gallery[0].img1}`} className="card-img-top primary" alt="Primary" />
-                      <img src={`http://localhost:5050/${x.gallery[0].img2}`} className="card-img-top secondary" alt="Secondary" />
+                      <img src={`https://krist-server.vercel.app//${x.gallery[0].img1}`} className="card-img-top primary" alt="Primary" />
+                      <img src={`https://krist-server.vercel.app//${x.gallery[0].img2}`} className="card-img-top secondary" alt="Secondary" />
                       <Link className="button" to={`/getWomen/${x._id}`}>Quick View</Link>
                     </div>
 

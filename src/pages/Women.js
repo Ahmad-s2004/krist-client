@@ -16,7 +16,7 @@ const Women = () => {
   const showSidebar = () => setSidebar(!sidebar);
 
   const fetchData = async () => {
-    const res = await fetch('http://localhost:5050/product/getWomen');
+    const res = await fetch('https://krist-server.vercel.app/product/getWomen');
     const data = await res.json();
     setProduct(data);
     setLoading(true);
@@ -27,7 +27,7 @@ const Women = () => {
   }, []);
 
   const fetchFilteredProducts = async (searchString) => {
-    const res = await fetch(`http://localhost:5050/product/getWomenProducts?search=${searchString}`);
+    const res = await fetch(`https://krist-server.vercel.app/product/getWomenProducts?search=${searchString}`);
     const data = await res.json();
     setProduct(data);
   };
@@ -150,8 +150,8 @@ const Women = () => {
                       <div className="card">
                         <div className="card-img-container">
                           <div className="sale my-auto">{Number(x.salePercent)}%</div>
-                          <img src={`http://localhost:5050/${x.gallery[0].img1}`} className="card-img-top primary" alt="Primary" />
-                          <img src={`http://localhost:5050/${x.gallery[0].img2}`} className="card-img-top secondary" alt="Secondary" />
+                          <img src={`https://krist-server.vercel.app/${x.gallery[0].img1}`} className="card-img-top primary" alt="Primary" />
+                          <img src={`https://krist-server.vercel.app/${x.gallery[0].img2}`} className="card-img-top secondary" alt="Secondary" />
                           <Link className="button" to={`/getWomen/${x._id}`}>Quick View</Link>
                         </div>
 

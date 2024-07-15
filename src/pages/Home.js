@@ -14,7 +14,7 @@ const Home = () => {
   const [loading, setLoading] = useState(false)
 
   let fetchData = async () => {
-    let res = await fetch('http://localhost:5050/product/getKids?limit=6')
+    let res = await fetch('https://krist-server.vercel.app/product/getKids?limit=6')
     res = await res.json()
     setProduct(res)
     setLoading(true)
@@ -77,8 +77,8 @@ const Home = () => {
                     <div className="col-lg-4 col-md-4 col-6">
                       <div className="card" >
                         <div className='card-img-container'>
-                          <img src={`http://localhost:5050/${x.gallery[0].img1}`} className="card-img-top primary" alt="Primary" />
-                          <img src={`http://localhost:5050/${x.gallery[0].img2}`} className="card-img-top secondary" alt="Secondary" />
+                          <img src={`https://krist-server.vercel.app/${x.gallery[0].img1}`} className="card-img-top primary" alt="Primary" />
+                          <img src={`https://krist-server.vercel.app/${x.gallery[0].img2}`} className="card-img-top secondary" alt="Secondary" />
                         </div>
                         <div className="card-body">
                           <p className="card-text fw-semibold d-none d-lg-block" style={{ fontSize: "0.75rem" }}>{x.title}</p>

@@ -11,13 +11,13 @@ const Dashboard = () => {
 
 
   let fetchData = async() =>{
-    let res = await fetch('http://localhost:5050/post/getAllAddress')
+    let res = await fetch('https://krist-server.vercel.app/post/getAllAddress')
     res = await res.json()
     setAddress(res)
   }
 
   let removeAddress = async(id)=>{
-    let res = await axios.delete(`http://localhost:5050/post/removeAddress/${id}`)
+    let res = await axios.delete(`https://krist-server.vercel.app/removeAddress/${id}`)
     fetchData()
   }
 

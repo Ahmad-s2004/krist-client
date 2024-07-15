@@ -21,7 +21,7 @@ const Shipping = () => {
 
   const sendRequest = async () => {
     try {
-      const res = await axios.post('http://localhost:5050/post/getAddress', {
+      const res = await axios.post('https://krist-server.vercel.app/post/getAddress', {
         name: inputs.name,
         email: inputs.email,
         phone: inputs.phone,
@@ -37,7 +37,7 @@ const Shipping = () => {
   };
 
   let fetchData = async() =>{
-    let res = await fetch('http://localhost:5050/post/getAllAddress')
+    let res = await fetch('https://krist-server.vercel.app/post/getAllAddress')
     res = await res.json()
     setProduct(res)
   }
