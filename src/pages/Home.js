@@ -11,7 +11,7 @@ import Footer from '../components/Footer';
 const Home = () => {
 
   const [product, setProduct] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
 
   let fetchData = async () => {
     let res = await fetch('http://krist-server.vercel.app/product/getKids?limit=6')
