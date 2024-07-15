@@ -23,19 +23,20 @@ const Payment = () => {
 
     let handelSubmit = async (e) => {
         e.preventDefault();
-        try {
-            let res = await axios.post('https://krist-server.vercel.app/post/getCard', {
-                name: inputs.name,
-                cardNumber: inputs.cardNumber,
-                expire: inputs.expire,
-                email: inputs.email,
-                cvv: inputs.cvv,
-            }, { withCredentials: true })
+        // console.log("handelChange")
+        // try {
+        //     let res = await axios.post('http://krist-server.vercel.app/post/getCard', {
+        //         name: inputs.name,
+        //         cardNumber: inputs.cardNumber,
+        //         expire: inputs.expire,
+        //         email: inputs.email,
+        //         cvv: inputs.cvv,
+        //     }, { withCredentials: true })
             setValue(true)
-            console.log(res.data)
-        } catch (error) {
-            console.log(error.error, 'error')
-        }
+        //     console.log(res.data, value, "here is value and")
+        // } catch (error) {
+        //     console.log(error.error, 'error')
+        // }
     }
 
     let handelChange = (e) => {
