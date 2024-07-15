@@ -14,7 +14,7 @@ const Home = () => {
   const [loading, setLoading] = useState(false)
 
   let fetchData = async () => {
-    let res = await fetch('http://krist-server.vercel.app/product/getKids?limit=6')
+    let res = await fetch('https://krist-server.vercel.app/product/getKids?limit=6')
     res = await res.json()
     setProduct(res)
     setLoading(true)
