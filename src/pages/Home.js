@@ -81,12 +81,12 @@ const Home = () => {
                           <img src={`https://krist-server.vercel.app/${x.gallery[0].img2}`} className="card-img-top secondary" alt="Secondary" />
                         </div>
                         <div className="card-body">
-                          <p className="card-text fw-semibold d-none d-lg-block" style={{ fontSize: "0.75rem" }}>{x.title}</p>
-                          <p className="card-text fw-semibold d-none d-sm-block d-lg-none" style={{ fontSize: "0.55rem", marginTop: "-10px" }}>{x.title}</p>
-                          <p className="card-text fw-semibold d-block d-sm-none" style={{ fontSize: "0.45rem", marginTop: "-10px" }}>{x.title.slice(0, 30)}...</p>
+                          <p className="card-text fw-semibold d-none d-lg-block" style={{ fontSize: "0.85rem" }}>{x.title}</p>
+                          <p className="card-text fw-semibold d-none d-sm-block d-lg-none" style={{ fontSize: "0.65rem", marginTop: "-10px" }}>{x.title}</p>
+                          <p className="card-text fw-semibold d-block d-sm-none" style={{ fontSize: "0.55rem", marginTop: "-10px" }}>{x.title.slice(0, 30)}...</p>
                           <p class="card-text d-none d-lg-block" style={{ marginTop: "-6px", fontSize: "0.9rem" }}>Rs. {x.price}</p>
-                          <p class="card-text d-none d-md-block d-lg-none" style={{ marginTop: "-12px", fontSize: "0.6rem" }}>Rs. {x.price}</p>
-                          <p class="card-text d-block d-md-none" style={{ marginTop: "-14px", fontSize: "0.5rem" }}>Rs. {x.price}</p>
+                          <p class="card-text d-none d-md-block d-lg-none" style={{ marginTop: "-12px", fontSize: "0.7rem" }}>Rs. {x.price}</p>
+                          <p class="card-text d-block d-md-none" style={{ marginTop: "-14px", fontSize: "0.6rem" }}>Rs. {x.price}</p>
                         </div>
                       </div>
 
