@@ -19,13 +19,8 @@ const Shipping = () => {
   const[product, setProduct] = useState([])
   const[userid, setUserid] = useState('')
 
-  let sendRequest = async () => {
+  const sendRequest = async () => {
     try {
-      const token = getCookie('token'); // Example: Retrieve token from localStorage
-
-    if (!token) {
-      throw new Error('Token not found'); // Handle case where token is missing
-    }
       const res = await axios.post('https://krist-server.vercel.app/post/getAddress', {
         name: inputs.name,
         email: inputs.email,
@@ -34,12 +29,10 @@ const Shipping = () => {
         city: inputs.city,
         postal: inputs.postal,
         country: inputs.country,
-      },{headers: {
-          'Content-Type': 'application/json',
-          Authorization: token
-        }},{ withCredentials: true });
+      }, { withCredentials: true });
+  
     } catch (err) {
-      console.error("Error in sendRequest:", err);
+      console.error(err);
     }
   };
 
@@ -84,7 +77,7 @@ const Shipping = () => {
                     <li className="checkout-">
                       <div className="feed-item-list">
                         <div>
-                          <h5 className="font-size-16 mb-1">Billing Info .</h5>
+                          <h5 className="font-size-16 mb-1">Billing Info</h5>
                           <p className="text-muted text-truncate mb-4">Add a new address</p>
                           <div className="mb-3">
                             <form onSubmit={handelSubmit}>
@@ -132,7 +125,7 @@ const Shipping = () => {
                                       <input type="text" className="form-control" id="zip-code" name='postal' onChange={handelChange} placeholder="Enter Postal code" />
                                     </div>
                                   </div>
-                                  <button type="submit" className="mt-2 ms-2 btn btn-dark" style={{ width: "100px" }}>
+                                  <button type="submit" className="mx-auto btn btn-dark" style={{ width: "100px" }}>
                                     Submit
                                   </button>
                                 </div>
