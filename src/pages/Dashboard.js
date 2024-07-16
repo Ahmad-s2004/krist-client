@@ -18,7 +18,9 @@ const Dashboard = () => {
 
   const removeAddress = async (id) => {
     try {
-        const res = await axios.delete(`https://krist-server.vercel.app/removeAddress/${id}`);
+        let res = await fetch(`https://krist-server.vercel.app/removeAddress/${id}`,{
+        method: "delete"
+    })
         console.log("Response:", res.data);
         fetchData();
     } catch (error) {
