@@ -21,6 +21,7 @@ const Shipping = () => {
 
   const sendRequest = async () => {
     try {
+      let token = localStorage.getItem('token')
       const res = await axios.post('https://krist-server.vercel.app/post/getAddress', {
         name: inputs.name,
         email: inputs.email,
@@ -29,6 +30,10 @@ const Shipping = () => {
         city: inputs.city,
         postal: inputs.postal,
         country: inputs.country,
+      },{
+        headers:{
+          Authorization:token
+        }
       }, { withCredentials: true });
   
     } catch (err) {
