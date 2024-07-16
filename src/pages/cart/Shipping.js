@@ -20,6 +20,7 @@ const Shipping = () => {
   const[userid, setUserid] = useState('')
 
   const sendRequest = async () => {
+    console.log("dnakjdbjkabsdjkabjs")
     try {
       const res = await axios.post('https://krist-server.vercel.app/post/getAddress', {
         name: inputs.name,
