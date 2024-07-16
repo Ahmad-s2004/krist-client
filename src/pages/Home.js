@@ -107,7 +107,7 @@ const Home = () => {
                   <div className="titleService">Free Shipping</div>
                   <div className="descriptionService">Free shipping for order above 2000</div>
                 </div>
-                <div className='d-block d-lg-none my-2'>
+                <div className='d-block d-lg-none my-2 '>
                   <div><LocalShippingIcon className="" /></div>
                   <div className="fw-semibold">Free Shipping</div>
                   <div style={{ fontSize: "14px" }}>Free shipping for order above 2000</div>
