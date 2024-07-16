@@ -46,7 +46,7 @@ const Shipping = () => {
   useEffect(()=>{
     fetchData()
   },[])
-  let handelChange = (e) => {
+  let handelChange = (e) => { 
     const { name, value } = e.target;
     setInputs(x => ({
       ...x,
