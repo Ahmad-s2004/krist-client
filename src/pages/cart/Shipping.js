@@ -34,10 +34,9 @@ const Shipping = () => {
         city: inputs.city,
         postal: inputs.postal,
         country: inputs.country,
-        token 
       },{headers: {
           'Content-Type': 'application/json',
-          // Add any other headers if required
+          'Authorization': token
         }},{ withCredentials: true });
     } catch (err) {
       console.error("Error in sendRequest:", err);
