@@ -21,7 +21,7 @@ const Shipping = () => {
 
   let sendRequest = async () => {
     try {
-      const token = localStorage.getItem('token'); // Example: Retrieve token from localStorage
+      const token = getCookie('token'); // Example: Retrieve token from localStorage
 
     if (!token) {
       throw new Error('Token not found'); // Handle case where token is missing
@@ -34,6 +34,7 @@ const Shipping = () => {
         city: inputs.city,
         postal: inputs.postal,
         country: inputs.country,
+        token
       },{headers: {
           'Content-Type': 'application/json',
           // Add any other headers if required
