@@ -62,7 +62,7 @@ const toggleSearch = () => {
         </ul>
         <div className="navbar-icons ">
           <span><FaSearch className="icon" onClick={toggleSearch} /></span>
-          <span><FaHeart className="icon d-none d-sm-block" /></span>
+          <span className='d-none d-sm-block'><FaHeart className="icon " /></span>
           <span className=' d-block d-sm-none'><Link to="/dashboard"><FaUser className="icon" /></Link></span>
           <span><Link to="/cart">
             <Badge badgeContent={data.length} color="primary">
@@ -70,12 +70,12 @@ const toggleSearch = () => {
             </Badge>
           </Link></span>
           
-          <div className='d-none d-md-block'>
+          <div>
             {
               localStorage.getItem('token')?
-              <Link className=" btn btn-dark px-4 py-1 rounded-3" to='/dashboard'>Account</Link>
+              <Link className=" btn btn-dark d-none d-md-block px-4 py-1 rounded-3" to='/dashboard'>Account</Link>
               :
-              <Link className=" btn btn-dark px-4 py-1 rounded-3" to='/signin'>Login</Link>
+              <Link className=" btn btn-dark d-none d-md-block px-4 py-1 rounded-3" to='/signin'>Login</Link>
             }
           </div>
         </div>
