@@ -50,7 +50,7 @@ const toggleSearch = () => {
         <div className="navbar-left">
           <FaBars className="menu-bars" onClick={showSidebar} />
           <div className="navbar-logo">
-            <Link to="/">Krist</Link>
+            <Link to="/">Krist </Link>
           </div>
         </div>
         <ul className="navbar-menu z-3">
