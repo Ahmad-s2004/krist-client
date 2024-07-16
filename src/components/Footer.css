@@ -205,7 +205,7 @@ a{
         text-transform: uppercase;
     }
 
-    .widget> li, .widget>h3, .widget>a{
+    .widget-title> li, .widget-title>h3, .widget-title>a{
         font-size: 11px!important;
     }
     
