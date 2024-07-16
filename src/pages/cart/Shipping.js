@@ -21,6 +21,11 @@ const Shipping = () => {
 
   let sendRequest = async () => {
     try {
+      const token = localStorage.getItem('token'); // Example: Retrieve token from localStorage
+
+    if (!token) {
+      throw new Error('Token not found'); // Handle case where token is missing
+    }
       const res = await axios.post('https://krist-server.vercel.app/post/getAddress', {
         name: inputs.name,
         email: inputs.email,
@@ -29,7 +34,10 @@ const Shipping = () => {
         city: inputs.city,
         postal: inputs.postal,
         country: inputs.country,
-      }, { withCredentials: true });
+      },{headers: {
+          'Content-Type': 'application/json',
+          // Add any other headers if required
+        }},{ withCredentials: true });
     } catch (err) {
       console.error("Error in sendRequest:", err);
     }
