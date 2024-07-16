@@ -16,20 +16,16 @@ const Dashboard = () => {
     setAddress(res)
   }
 
-  const removeAddress = async (req, res) => {
-    const { _id } = req.params;
-    console.log(_id, "ID");
+  const removeAddress = async (id) => {
     try {
-        const fetchedData = await address.deleteOne({ _id });
-        if (fetchedData.deletedCount === 0) {
-            return res.status(404).json({ message: "Address not found" });
-        }
-        return res.status(200).json({ message: "Removed" });
+        const res = await axios.delete(`https://krist-server.vercel.app/removeAddress/${id}`);
+        console.log("Response:", res.data);
+        fetchData();
     } catch (error) {
-        console.error("Error in removeAddress:", error);
-        return res.status(500).json({ message: "Internal server error" });
+        console.error("Error in removeAddress:", error.response ? error.response.data : error.message);
     }
 };
+
 
   useEffect(()=>{
     fetchData()
