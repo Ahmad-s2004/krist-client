@@ -125,7 +125,7 @@ const Shipping = () => {
                                       <input type="text" className="form-control" id="zip-code" name='postal' onChange={handelChange} placeholder="Enter Postal code" />
                                     </div>
                                   </div>
-                                  <button type="submit" className="mt-2 ms-1 btn btn-dark" style={{ width: "100px" }}>
+                                  <button type="submit" className="mt-2 ms-2 btn btn-dark" onClick={()=>sendRequest()} style={{ width: "100px" }}>
                                     Submit
                                   </button>
                                 </div>
