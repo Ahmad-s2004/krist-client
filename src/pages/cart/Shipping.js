@@ -35,7 +35,7 @@ const Shipping = () => {
           Authorization:token
         }
       }, { withCredentials: true });
-  
+        console.log(res)
     } catch (err) {
       console.error(err);
     }
