@@ -17,8 +17,12 @@ const Dashboard = () => {
   }
 
   let removeAddress = async(id)=>{
-    let res = await axios.post(`https://krist-server.vercel.app/removeAddress/${id}`)
-    fetchData()
+    try {
+      let res = await axios.post(`https://krist-server.vercel.app/removeAddress/${id}`)
+      fetchData()
+    } catch (error) {
+    console.error("Error" ,error)      
+    }
   }
 
 
