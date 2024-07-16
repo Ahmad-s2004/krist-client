@@ -61,8 +61,8 @@ const toggleSearch = () => {
           <li><Link to="/contact">Contact</Link></li>
         </ul>
         <div className="navbar-icons ">
-          <FaSearch className="icon" onClick={toggleSearch} />
-          <FaHeart className="icon d-none d-sm-block" />
+          <Link><FaSearch className="icon" onClick={toggleSearch} /></Link>
+          <Link><FaHeart className="icon d-none d-sm-block" /></Link>
           <Link to="/dashboard"><FaUser className="icon d-block d-sm-none" /></Link>
           <Link to="/cart">
             <Badge badgeContent={data.length} color="primary">
@@ -91,7 +91,7 @@ const toggleSearch = () => {
             />
             
               {
-                search === '' || ""? <Link className="search-link"><FaSearch className="icon iconSearch" /></Link> : <Link to={`/getProducts/${search}`} className="search-link"><FaSearch className="icon iconSearch" onClick={navigateToSearch} /></Link>
+                search === '' || ""? <Link className="search-link ps-1"><FaSearch className="icon iconSearch" /></Link> : <Link to={`/getProducts/${search}`} className="search-link"><FaSearch className="icon iconSearch" onClick={navigateToSearch} /></Link>
               }
                 
             
