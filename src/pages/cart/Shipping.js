@@ -7,6 +7,7 @@ import axios from 'axios'
 
 const Shipping = () => {
 
+  const [response, setResponse] = useState('')
   const [inputs, setInputs] = useState({
     name: "",
     email: "",
@@ -35,7 +36,7 @@ const Shipping = () => {
           Authorization:token
         }
       }, { withCredentials: true });
-        console.log(res)
+        setResponse(res.data.message)
     } catch (err) {
       console.error(err);
     }
@@ -85,6 +86,7 @@ const Shipping = () => {
                           <h5 className="font-size-16 mb-1">Billing Info</h5>
                           <p className="text-muted text-truncate mb-4">Add a new address</p>
                           <div className="mb-3">
+                            <div className='text-center' style={{color:"red"}}>{response}</div>
                             <form onSubmit={handelSubmit}>
                               <div>
                                 <div className="row">
