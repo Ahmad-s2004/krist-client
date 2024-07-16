@@ -36,7 +36,7 @@ const Shipping = () => {
         country: inputs.country,
       },{headers: {
           'Content-Type': 'application/json',
-          'Authorization': token
+          Authorization: token
         }},{ withCredentials: true });
     } catch (err) {
       console.error("Error in sendRequest:", err);
@@ -84,7 +84,7 @@ const Shipping = () => {
                     <li className="checkout-">
                       <div className="feed-item-list">
                         <div>
-                          <h5 className="font-size-16 mb-1">Billing Info</h5>
+                          <h5 className="font-size-16 mb-1">Billing Info .</h5>
                           <p className="text-muted text-truncate mb-4">Add a new address</p>
                           <div className="mb-3">
                             <form onSubmit={handelSubmit}>
