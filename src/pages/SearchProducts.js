@@ -6,22 +6,24 @@ import { Link, useParams } from 'react-router-dom'
 const SearchProducts = () => {
 
   const [product, setProduct] = useState([])
-  const {search} = useParams()
+  const [loading, setLoading] = useState(true)
+  const { search } = useParams()
 
   useEffect(() => {
     let fetchData = async () => {
       let res = await fetch(`https://krist-server.vercel.app/product/getProducts?search=${search}`)
       res = await res.json()
       setProduct(res)
+      setLoading(false)
     }
     fetchData()
-  },[search])
+  }, [search])
 
 
 
-let ShowProducts = () =>{
-    return(
-        <div className="container-fluid px-4">
+  let ShowProducts = () => {
+    return (
+      <div className="container-fluid px-4 mt-4">
         <div className="row">
           {
             product.map(x => {
@@ -50,26 +52,53 @@ let ShowProducts = () =>{
         </div>
       </div>
     )
-}
+  }
 
-let NotFound = () =>{
-    return(
-        <>
-        <h5 className='text-center mt-5 py-5' style={{marginBottom:"300px"}}>Product Not Found</h5>
-        </>
+  let NotFound = () => {
+    return (
+      <>
+        <h5 className='text-center mt-5 py-5' style={{ marginBottom: "300px" }}>Product Not Found</h5>
+      </>
     )
-}
+  }
 
+
+  let Loading = () => {
+    return (
+      <>
+        <div className="d-none d-sm-block">
+          <div className="d-flex justify-content-center align-items-center" style={{ height: "550px" }}>
+            <div className="spinner-border" role="status">
+              <span className="sr-only">Loading...</span>
+            </div>
+          </div>
+        </div>
+        <div className="d-block d-sm-none ">
+          <div className="d-flex justify-content-center align-items-center" style={{ height: "550px" }}>
+            <div className="spinner-border" role="status">
+              <span className="sr-only">Loading...</span>
+            </div>
+          </div>
+        </div>
+      </>
+    )
+  }
   return (
 
     <>
       <Navbar />
       <div>
-       {
-            product == ""? <NotFound/>:<ShowProducts/>
-       }
+        {
+          loading ? (
+            <Loading />
+          ) : product.length === 0 ? (
+            <NotFound />
+          ) : (
+            <ShowProducts />
+          )
+        }
       </div>
-       <Footer/>
+      <Footer />
     </>
 
   )
