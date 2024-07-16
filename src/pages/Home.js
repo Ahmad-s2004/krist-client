@@ -101,13 +101,13 @@ const Home = () => {
           <div className="container">
             <div className="row d-block d-md-none">
             <div className="row text-center d-block d-md-none">
-              <div className="col-lg-3 col-md-3 col-sm-6 col-6">
+              <div className="col-lg-3 col-md-3 col-sm-6 col-12">
                 <div className='d-none d-lg-block my-2'>
                   <div><LocalShippingIcon className="iconService" /></div>
                   <div className="titleService">Free Shipping</div>
                   <div className="descriptionService">Free shipping for order above 2000</div>
                 </div>
-                <div className='d-block d-lg-none my-2 mx-auto'>
+                <div className='d-block d-lg-none my-2'>
                   <div><LocalShippingIcon className="" /></div>
                   <div className="fw-semibold">Free Shipping</div>
                   <div style={{ fontSize: "14px" }}>Free shipping for order above 2000</div>

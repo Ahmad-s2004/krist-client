@@ -204,6 +204,9 @@ a{
         font-weight: 500;
         text-transform: uppercase;
     }
+    .widget> li, .widget>h3, .widget>a{
+        font-size: 11px;
+    }
     
     .market-button {
         display: inline-block;
