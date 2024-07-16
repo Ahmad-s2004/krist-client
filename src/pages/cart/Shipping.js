@@ -23,7 +23,7 @@ const Shipping = () => {
     try {
       console.log("Sending request with data:", inputs); // Log inputs before sending the request
   
-      const res = await axios.post('https://krist-server.vercel.app/post/getAddress', {
+      const res = await axios.post('http://krist-server.vercel.app/post/getAddress', {
         name: inputs.name,
         email: inputs.email,
         phone: inputs.phone,
