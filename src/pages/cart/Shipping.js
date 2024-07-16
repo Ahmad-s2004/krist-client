@@ -19,8 +19,7 @@ const Shipping = () => {
   const[product, setProduct] = useState([])
   const[userid, setUserid] = useState('')
 
-  const sendRequest = async () => {
-    console.log("dnakjdbjkabsdjkabjs")
+const sendRequest = async () => {
     try {
       const res = await axios.post('https://krist-server.vercel.app/post/getAddress', {
         name: inputs.name,
@@ -31,6 +30,7 @@ const Shipping = () => {
         postal: inputs.postal,
         country: inputs.country,
       }, { withCredentials: true });
+      console.log("dnakjdbjkabsdjkabjs")
       console.log(res, "sucessfull")
     } catch (err) {
       console.error(err);
