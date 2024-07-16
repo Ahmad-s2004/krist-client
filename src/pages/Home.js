@@ -99,7 +99,8 @@ const Home = () => {
         </div>
         <div className="serviceSection">
           <div className="container">
-            <div className="row">
+            <div className="row d-block d-md-none">
+            <div className="row text-center d-block d-md-none">
               <div className="col-lg-3 col-md-3 col-sm-6 col-6">
                 <div className='d-none d-lg-block my-2'>
                   <div><LocalShippingIcon className="iconService" /></div>
@@ -148,6 +149,7 @@ const Home = () => {
                   <p style={{ fontSize: "14px" }}>Pay with multiple credit cards</p>
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </div>
