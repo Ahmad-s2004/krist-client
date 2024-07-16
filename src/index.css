@@ -177,6 +177,44 @@ code {
 }
 
 
+.serviceSection .serviceItem {
+  margin: 10px 0;
+}
+
+.serviceSection .iconService {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.serviceSection .titleService {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.serviceSection .descriptionService {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .serviceSection .iconService {
+    font-size: 2rem;
+  }
+
+  .serviceSection .titleService {
+    font-size: 1rem;
+  }
+
+  .serviceSection .descriptionService {
+    font-size: 0.875rem;
+  }
+
+  .serviceSection .col-sm-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+
 @media (max-width: 992px) {
   .incDecBtn2{
     display: block!important;

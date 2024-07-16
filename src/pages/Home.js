@@ -98,61 +98,39 @@ const Home = () => {
           </div>
         </div>
         <div className="serviceSection">
-          <div className="container">
-            <div className="row d-block d-md-none">
-            <div className="row text-center d-block d-md-none">
-              <div className="col-lg-3 col-md-3 col-sm-6 col-12">
-                <div className='d-none d-lg-block my-2'>
-                  <div><LocalShippingIcon className="iconService" /></div>
-                  <div className="titleService">Free Shipping</div>
-                  <div className="descriptionService">Free shipping for order above 2000</div>
-                </div>
-                <div className='d-block d-lg-none my-2 '>
-                  <div><LocalShippingIcon className="" /></div>
-                  <div className="fw-semibold">Free Shipping</div>
-                  <div style={{ fontSize: "14px" }}>Free shipping for order above 2000</div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-3 col-sm-6 col-12">
-                <div className='d-none d-lg-block my-2'>
-                  <div><PaidIcon className="iconService" /></div>
-                  <div className="titleService">Money Guarentee</div>
-                  <div className="descriptionService">Within 20 days for an exchange</div>
-                </div>
-                <div className='d-block d-lg-none my-2'>
-                  <div><PaidIcon className="" /></div>
-                  <div className="fw-semibold">Money Guarentee</div>
-                  <div style={{ fontSize: "14px" }}>Within 20 days for an exchange</div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-3 col-sm-6 col-12">
-                <div className='d-none d-lg-block my-2'>
-                  <div><SupportAgentIcon className="iconService" /></div>
-                  <div className="titleService">Online Support</div>
-                  <div className="descriptionService">24 hour a day, 7 days a week</div>
-                </div>
-                <div className='d-block d-lg-none my-2'>
-                  <div><SupportAgentIcon className="" /></div>
-                  <div className="fw-semibold">Online Support</div>
-                  <div style={{ fontSize: "14px" }}>24 hour a day, 7 days a week</div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-3 col-sm-6 col-12">
-                <div className='d-none d-lg-block'>
-                  <div><PaymentIcon className="iconService" /></div>
-                  <div className="titleService">Flexible Payment</div>
-                  <div className="descriptionService">Pay with multiple credit cards</div>
-                </div>
-                <div className='d-block d-lg-none my-2'>
-                  <div><PaymentIcon className="mb-2" /></div>
-                  <div className="fw-semibold">Flexible Payment</div>
-                  <p style={{ fontSize: "14px" }}>Pay with multiple credit cards</p>
-                </div>
-              </div>
+      <div className="container">
+        <div className="row text-center">
+          <div className="col-lg-3 col-md-3 col-sm-6 col-12">
+            <div className="serviceItem">
+              <LocalShippingIcon className="iconService" />
+              <div className="titleService">Free Shipping</div>
+              <div className="descriptionService">Free shipping for order above 2000</div>
             </div>
+          </div>
+          <div className="col-lg-3 col-md-3 col-sm-6 col-12">
+            <div className="serviceItem">
+              <PaidIcon className="iconService" />
+              <div className="titleService">Money Guarantee</div>
+              <div className="descriptionService">Within 20 days for an exchange</div>
+            </div>
+          </div>
+          <div className="col-lg-3 col-md-3 col-sm-6 col-12">
+            <div className="serviceItem">
+              <SupportAgentIcon className="iconService" />
+              <div className="titleService">Online Support</div>
+              <div className="descriptionService">24 hours a day, 7 days a week</div>
+            </div>
+          </div>
+          <div className="col-lg-3 col-md-3 col-sm-6 col-12">
+            <div className="serviceItem">
+              <PaymentIcon className="iconService" />
+              <div className="titleService">Flexible Payment</div>
+              <div className="descriptionService">Pay with multiple credit cards</div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
       </div>
       <Footer />
       </>
