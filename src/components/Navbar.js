@@ -61,14 +61,15 @@ const toggleSearch = () => {
           <li><Link to="/contact">Contact</Link></li>
         </ul>
         <div className="navbar-icons ">
-          <FaSearch className="icon" onClick={toggleSearch} />
-          <Link><FaHeart className="icon d-none d-sm-block" /></Link>
-          <Link to="/dashboard"><FaUser className="icon d-block d-sm-none" /></Link>
-          <Link to="/cart">
+          <span><FaSearch className="icon" onClick={toggleSearch} /></span>
+          <span><FaHeart className="icon d-none d-sm-block" /></span>
+          <span><Link to="/dashboard"><FaUser className="icon d-block d-sm-none" /></Link></span>
+          <span><Link to="/cart">
             <Badge badgeContent={data.length} color="primary">
                 <FaShoppingCart className="icon" />
             </Badge>
-          </Link>
+          </Link></span>
+          
           <div>
             {
               localStorage.getItem('token')?
