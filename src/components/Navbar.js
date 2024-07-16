@@ -63,7 +63,7 @@ const toggleSearch = () => {
         <div className="navbar-icons ">
           <FaSearch className="icon" onClick={toggleSearch} />
           <FaHeart className="icon d-none d-sm-block" />
-          <Link to="/dashboardx"><FaUser className="icon d-block d-sm-none" /></Link>
+          <Link to="/dashboard"><FaUser className="icon d-block d-sm-none" /></Link>
           <Link to="/cart">
             <Badge badgeContent={data.length} color="primary">
                 <FaShoppingCart className="icon" />
