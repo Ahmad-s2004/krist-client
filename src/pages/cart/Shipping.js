@@ -21,9 +21,7 @@ const Shipping = () => {
 
   let sendRequest = async () => {
     try {
-      console.log("Sending request with data:", inputs); // Log inputs before sending the request
-  
-      const res = await axios.post('http://krist-server.vercel.app/post/getAddress', {
+      const res = await axios.post('https://krist-server.vercel.app/post/getAddress', {
         name: inputs.name,
         email: inputs.email,
         phone: inputs.phone,
@@ -32,11 +30,6 @@ const Shipping = () => {
         postal: inputs.postal,
         country: inputs.country,
       }, { withCredentials: true });
-  
-      console.log("Response from server:", res.data); // Log server response
-  
-      // Optionally, you can reset the form fields or perform other actions upon successful submission
-  
     } catch (err) {
       console.error("Error in sendRequest:", err);
     }
