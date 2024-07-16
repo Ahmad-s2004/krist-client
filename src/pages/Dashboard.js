@@ -24,7 +24,7 @@ const Dashboard = () => {
         console.log("Response:", res.data);
         fetchData();
     } catch (error) {
-        console.error("Error in removeAddress:", error.response ? error.response.data : error.message);
+        console.error("Error in removeAddress:", error.response ? error.response.data : error.message, error);
     }
 };
 
