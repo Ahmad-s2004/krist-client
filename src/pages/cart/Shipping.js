@@ -30,7 +30,7 @@ const Shipping = () => {
         postal: inputs.postal,
         country: inputs.country,
       }, { withCredentials: true });
-  
+      console.log(res, "sucessfull")
     } catch (err) {
       console.error(err);
     }
