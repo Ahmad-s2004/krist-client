@@ -17,7 +17,7 @@ const Dashboard = () => {
   }
 
   let removeAddress = async(id)=>{
-    let res = await axios.delete(`https://krist-server.vercel.app/removeAddress/${id}`)
+    let res = await axios.post(`https://krist-server.vercel.app/removeAddress/${id}`)
     fetchData()
   }
 
