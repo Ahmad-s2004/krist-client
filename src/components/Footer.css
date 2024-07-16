@@ -205,8 +205,8 @@ a{
         text-transform: uppercase;
     }
 
-    .list-unstyled> li .list-unstyled>a{
-        font-size: 11px!important;
+    li{
+        font-size: 10px!important;
     }
     
     .market-button {
