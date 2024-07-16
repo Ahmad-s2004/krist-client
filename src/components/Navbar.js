@@ -70,12 +70,12 @@ const toggleSearch = () => {
             </Badge>
           </Link></span>
           
-          <div>
+          <div className='d-none d-md-block'>
             {
               localStorage.getItem('token')?
-              <Link className=" btn btn-dark d-none d-md-block px-4 py-1 rounded-3" to='/dashboard'>Account</Link>
+              <Link className=" btn btn-dark px-4 py-1 rounded-3" to='/dashboard'>Account</Link>
               :
-              <Link className=" btn btn-dark d-none d-md-block px-4 py-1 rounded-3" to='/signin'>Login</Link>
+              <Link className=" btn btn-dark px-4 py-1 rounded-3" to='/signin'>Login</Link>
             }
           </div>
         </div>
