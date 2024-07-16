@@ -36,7 +36,11 @@ const Shipping = () => {
           Authorization:token
         }
       }, { withCredentials: true });
+      if(!res.response.data.message){
         setResponse(res.data.message)
+      }else{
+          setResponse(res.response.data.message)
+        }
     } catch (err) {
       console.error(err);
     }
