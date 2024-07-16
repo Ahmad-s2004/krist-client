@@ -34,7 +34,7 @@ const Shipping = () => {
         city: inputs.city,
         postal: inputs.postal,
         country: inputs.country,
-        token
+        token 
       },{headers: {
           'Content-Type': 'application/json',
           // Add any other headers if required
