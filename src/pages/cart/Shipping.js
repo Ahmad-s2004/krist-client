@@ -36,14 +36,10 @@ const Shipping = () => {
           Authorization:token
         }
       }, { withCredentials: true });
-      console.log(res.response)
-      if(!res.response.data.message){
         setResponse(res.data.message)
-      }else{
-          setResponse(res.response.data.message)
-        }
     } catch (err) {
-      console.error(err);
+      console.error(err)
+      setResponse(err.response.data.message);
     }
   };
 
