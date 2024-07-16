@@ -15,7 +15,7 @@ const Women = () => {
   const showSidebar = () => setSidebar(!sidebar);
 
   const fetchData = async () => {
-    const res = await fetch('http://krist-server.vercel.app/product/getWomen');
+    const res = await fetch('https://krist-server.vercel.app/product/getWomen');
     const data = await res.json();
     setProduct(data);
     console.log(data)
