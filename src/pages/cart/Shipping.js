@@ -87,7 +87,7 @@ const Shipping = () => {
                           <h5 className="font-size-16 mb-1">Billing Info</h5>
                           <p className="text-muted text-truncate mb-4">Add a new address</p>
                           <div className="mb-3">
-                            <div className='text-center' style={{color:"red"}}>{response}</div>
+                            <div className='text-center mb-2' style={{color:"red"}}>{response}</div>
                             <form onSubmit={handelSubmit}>
                               <div>
                                 <div className="row">
@@ -133,7 +133,7 @@ const Shipping = () => {
                                       <input type="text" className="form-control" id="zip-code" name='postal' onChange={handelChange} placeholder="Enter Postal code" />
                                     </div>
                                   </div>
-                                  <button type="submit" className="mx-auto btn btn-dark" style={{ width: "100px" }}>
+                                  <button type="submit" className="btn btn-dark ms-2 mt-2" style={{ width: "100px" }}>
                                     Submit
                                   </button>
                                 </div>
