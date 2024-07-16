@@ -187,7 +187,7 @@ code {
 }
 
 .serviceSection .titleService {
-  font-weight: bold;
+  font-weight: 500;
   margin-bottom: 5px;
 }
 
@@ -201,11 +201,12 @@ code {
   }
 
   .serviceSection .titleService {
-    font-size: 1rem;
+    font-size: 0.75rem;
+
   }
 
   .serviceSection .descriptionService {
-    font-size: 0.875rem;
+    font-size: 0.7rem;
   }
 
   .serviceSection .col-sm-6 {
