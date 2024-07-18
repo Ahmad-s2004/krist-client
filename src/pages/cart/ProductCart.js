@@ -56,7 +56,7 @@ const ProductCart = () => {
         <div className="container">
           <div className="row d-flex align-items-center mt-3">
             {
-              data.map((x, i) => {
+              data.map((x) => {
                 return (
                   <>
                     <div className="col-lg-5 col-12 d-flex cartPart my-4">
