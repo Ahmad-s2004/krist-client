@@ -42,7 +42,7 @@ const ProductCart = () => {
     };
 
     const dispatchTotal = () => {
-        dispatch(TotalPrice(totalBill));
+        dispatch(TotalPrice({totalBill}));
     };
 
     return (
