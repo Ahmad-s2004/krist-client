@@ -2,12 +2,15 @@ import React, { useState } from 'react'
 import Navbar from '../../components/Navbar'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { clearCart } from '../../redux/sliceReducer'
 
 
 const Payment = () => {
+
+    let ammount = useSelector(x=>x.product.totalAmmount)
     const [value, setValue] = useState(false)
+    const [error, setError] = useState('')
     const [inputs, setInputs] = useState({
         name: "",
         cardNumber: "",
@@ -22,6 +25,17 @@ const Payment = () => {
     let navigate = useNavigate()
 
     let handelSubmit = async () => {
+        if(email == ''){
+            if(name == '' || cardNumber == '' || expire == '' || cvv == ''){
+                setError("Enter all Fields")
+            }
+        }
+        if(email != ''){
+            setError('')
+        }
+        if(error == ''){
+            setValue(true)
+        }
         // e.preventDefault();
         // console.log("handelChange")
         // try {
@@ -32,7 +46,6 @@ const Payment = () => {
         //         email: inputs.email,
         //         cvv: inputs.cvv,
         //     }, { withCredentials: true })
-            setValue(true)
         //     console.log(res.data, value, "here is value and")
         // } catch (error) {
         //     console.log(error.error, 'error')
@@ -57,6 +70,7 @@ const Payment = () => {
             <Navbar />
             <div className="container mt-4">
                 <h1 className="h5">Payment</h1>
+                <div className='text-center' style={{color:"red"}}>{error}</div>
                 <div className="row">
                     <div className="col-lg-9">
                         <div className="accordion" id="accordionPayment">
@@ -143,17 +157,14 @@ const Payment = () => {
                             <div className="p-3 bg-light bg-opacity-10">
                                 <h6 className="card-title mb-3">Order Summary</h6>
                                 <div className="d-flex justify-content-between mb-1 small">
-                                    <span>Subtotal</span> <span>$214.50</span>
+                                    <span>Subtotal</span> <span>Rs. {ammount}</span>
                                 </div>
                                 <div className="d-flex justify-content-between mb-1 small">
-                                    <span>Shipping</span> <span>$20.00</span>
-                                </div>
-                                <div className="d-flex justify-content-between mb-1 small">
-                                    <span>Coupon (Code: NEWYEAR)</span> <span className="text-danger">-$10.00</span>
+                                    <span>Shipping</span> <span>Rs. 400</span>
                                 </div>
                                 <hr />
                                 <div className="d-flex justify-content-between mb-4 small">
-                                    <span>TOTAL</span> <strong className="text-dark">$224.50</strong>
+                                    <span>TOTAL</span> <strong className="text-dark">Rs. {ammount + 400}</strong>
                                 </div>
                                 <div className="form-check mb-1 small">
                                     <input className="form-check-input" type="checkbox" defaultValue id="tnc" />
