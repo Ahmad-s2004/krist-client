@@ -3,6 +3,7 @@ import '../cart/Shipping.css'
 import Navbar from '../../components/Navbar'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import { useSelector } from 'react-redux'
 
 
 const Shipping = () => {
@@ -21,7 +22,10 @@ const Shipping = () => {
   const[userid, setUserid] = useState('')
 
   const sendRequest = async () => {
+
+    let data = useSelector(x=>x.cart)
     try {
+
       let token = localStorage.getItem('token')
       const res = await axios.post('https://krist-server.vercel.app/post/getAddress', {
         name: inputs.name,
@@ -187,7 +191,7 @@ const Shipping = () => {
                 <div className="col">
                   <div className="text-end mt-2 mt-sm-0">
                     <Link to="/payment" className="btn btn-success">
-                      <i className="mdi mdi-cart-outline me-1" /> Procced </Link>
+                      <i className="btn btn-dark me-1" /> Procced </Link>
                   </div>
                 </div> {/* end col */}
               </div> {/* end row*/}
@@ -203,14 +207,14 @@ const Shipping = () => {
 
                       <tbody>
 
-                        <tr>
+                        {/* <tr>
                           <td colSpan={2}>
                             <div className="font-size-14 m-0 h6">Discount :</div>
                           </td>
                           <td>
                             asdasd
                           </td>
-                        </tr>
+                        </tr> */}
                         <tr>
                           <td colSpan={2}>
                             <h6 className="font-size-14 m-0">Shipping Charge :</h6>
@@ -224,7 +228,7 @@ const Shipping = () => {
                             <h6 className="font-size-14 m-0">Total:</h6>
                           </td>
                           <td>
-                            Rs. 745.2
+                            Rs. {data.price+400}
                           </td>
                         </tr>
                       </tbody>
