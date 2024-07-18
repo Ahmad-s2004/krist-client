@@ -88,11 +88,13 @@ const toggleSearch = () => {
                 onChange={getValue}
                 onKeyPress={handleKeyPress}
             />
-            
+            <span>
+
               {
                 search === '' || ""? <Link className="search-link"><FaSearch className="icon iconSearch ps-1 " /></Link> : <Link to={`/getProducts/${search}`} className="search-link"><FaSearch className="icon iconSearch ps-1" onClick={navigateToSearch} /></Link>
               }
                 
+              </span>
             
       </div>
 
