@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import { useDispatch } from 'react-redux'
-import { addToCart, removeFromCart, removeSingleItem, TotalPrice } from '../../redux/sliceReducer'
+import { addToCart, removeFromCart, removeSingleItem } from '../../redux/sliceReducer'
 import { Link } from 'react-router-dom'
 
 const ProductCart = () => {
@@ -12,7 +12,6 @@ const ProductCart = () => {
   let data = useSelector(x => x.product)
 
   const [totalBill, setTotalBill] = useState(0)
-  const [totalPrice, setTotalPrice] = useState()
 
   let handelInc = (product) => {
     dispatch(addToCart({ product, data: product.sizes }))
@@ -40,11 +39,6 @@ const ProductCart = () => {
     return `${price.toLocaleString()}`;
   };
 
-  const dispatchTotal = () =>{
-    dispatch(TotalPrice({totalPrice}))
-  }
-  console.log(totalPrice)
-
 
 
   return (
@@ -56,7 +50,7 @@ const ProductCart = () => {
         <div className="container">
           <div className="row d-flex align-items-center mt-3">
             {
-              data.map((x) => {
+              data.map((x, i) => {
                 return (
                   <>
                     <div className="col-lg-5 col-12 d-flex cartPart my-4">
@@ -85,7 +79,6 @@ const ProductCart = () => {
                           </div>
                         </div>
                         <div className="col-lg-4 col-md-3 col-sm-3 col-12 greyColor cartText">Rs. {formatPrice(x.price * x.qnty)}</div>
-                        <div className="d-none">{setTotalPrice(x.price * x.qnty)}</div>
                       </div>
                     </div>
                   </>
@@ -102,8 +95,8 @@ const ProductCart = () => {
             <div className='d-block d-sm-none h6 fw-semibold'>SUBTOTAL : Rs. {formatPrice(totalBill)}</div>
             <p style={{fontSize:"0.8rem"}} className='d-none d-sm-block'>Tax included and shipping calculated at checkout</p>
             <p style={{fontSize:"0.65rem"}} className='d-block d-sm-none'>Tax included and shipping calculated at checkout</p>
-            <Link to='/shipping'><button className='btn btn-dark rounded-5 py-2 px-5 mx-auto d-none d-sm-block' onClick={dispatchTotal()}>CheckOut</button></Link>
-            <Link to='/shipping'><button className='btn btn-dark rounded-5 py-2 px-4 mx-auto d-block d-sm-none' onClick={dispatchTotal()} style={{fontSize:"0.8rem"}}>CheckOut</button></Link>
+            <Link to='/shipping'><button className='btn btn-dark rounded-5 py-2 px-5 mx-auto d-none d-sm-block' >CheckOut</button></Link>
+            <Link to='/shipping'><button className='btn btn-dark rounded-5 py-2 px-4 mx-auto d-block d-sm-none' style={{fontSize:"0.8rem"}}>CheckOut</button></Link>
             </div>
         </div>
       </div>
