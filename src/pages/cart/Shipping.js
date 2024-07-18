@@ -200,7 +200,7 @@ const Shipping = () => {
               <div className="card checkout-order-summary">
                 <div className="card-body">
                   <div className="p-3 bg-light mb-3 rounded-2">
-                    <span className="font-size-16 mb-0 fw-bold">SubTotal </span><span className="float-end ms-2">#MN0124</span>
+                    <span className="font-size-16 mb-0 fw-bold">SubTotal </span><span className="float-end ms-2">Rs. {data.price}</span>
                   </div>
                   <div className="table-responsive">
                     <table className="table table-centered mb-0 table-nowrap">

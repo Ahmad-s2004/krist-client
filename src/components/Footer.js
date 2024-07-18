@@ -17,7 +17,7 @@ const Footer = () => {
                   <li><span className="opacity-50">Monday-Friday:</span>9.00 am - 8.00 pm</li>
                   <li><span className="opacity-50">Saturday:</span>10.00 am - 6.00 pm</li>
                 </ul>
-                <p><Link className="navi-link-light" href="#">support@unishop.com</Link></p><Link className="social-button shape-circle sb-facebook sb-light-skin" href="#"><i className="socicon-facebook" /></Link><Link className="social-button shape-circle sb-twitter sb-light-skin" href="#"><i className="socicon-twitter" /></Link><Link className="social-button shape-circle sb-instagram sb-light-skin" href="#"><i className="socicon-instagram" /></Link><Link className="social-button shape-circle sb-google-plus sb-light-skin" href="#"><i className="socicon-googleplus" /></Link>
+                <p><Link className="navi-link-light linkSupport" href="#">support@unishop.com</Link></p><Link className="social-button shape-circle sb-facebook sb-light-skin" href="#"><i className="socicon-facebook" /></Link><Link className="social-button shape-circle sb-twitter sb-light-skin" href="#"><i className="socicon-twitter" /></Link><Link className="social-button shape-circle sb-instagram sb-light-skin" href="#"><i className="socicon-instagram" /></Link><Link className="social-button shape-circle sb-google-plus sb-light-skin" href="#"><i className="socicon-googleplus" /></Link>
               </section>
             </div>
             <div className="col-lg-3 col-md-6">
@@ -76,8 +76,8 @@ const Footer = () => {
                   <div className="input-group input-light">
                     <input className="form-control" type="email" name="EMAIL" width={100} placeholder="Your e-mail" /><span className="input-group-addon"><i className="icon-mail" /></span>
                   </div>
-                  <button className="btn btn-primary mt-2" type="submit">Suscbribe</button>
-                </div><span className="form-text text-sm text-white opacity-50">Subscribe to our Newsletter to receive early discount offers, latest news, sales and promo information.</span>
+                  <button className="btn btn-primary mt-2 linkSupport" type="submit">Suscbribe</button>
+                </div><span className="form-text text-sm text-white opacity-50 linkSupport">Subscribe to our Newsletter to receive early discount offers, latest news, sales and promo information.</span>
               </form>
             </div>
           </div>

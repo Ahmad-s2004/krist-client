@@ -205,7 +205,7 @@ a{
         text-transform: uppercase;
     }
 
-    li, .phoneNo{
+    li, .phoneNo, .linkSupport{
         font-size: 13px!important;
     }
     
