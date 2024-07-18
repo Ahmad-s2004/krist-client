@@ -190,8 +190,8 @@ const Shipping = () => {
                 </div> {/* end col */}
                 <div className="col">
                   <div className="text-end mt-2 mt-sm-0">
-                    <Link to="/payment" className="btn btn-success">
-                      <i className="btn btn-dark me-1" /> Procced </Link>
+                    <Link to="/payment" className="btn btn-dark">
+                      <i className="mdi mdi-cart-outline me-1" /> Procced </Link>
                   </div>
                 </div> {/* end col */}
               </div> {/* end row*/}
