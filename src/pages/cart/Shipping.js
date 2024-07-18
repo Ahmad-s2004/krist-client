@@ -23,7 +23,7 @@ const Shipping = () => {
 
   const sendRequest = async () => {
 
-    let data = useSelector(x=>x.cart)
+    // let data = useSelector(x=>x.cart)
     try {
 
       let token = localStorage.getItem('token')
@@ -200,7 +200,7 @@ const Shipping = () => {
               <div className="card checkout-order-summary">
                 <div className="card-body">
                   <div className="p-3 bg-light mb-3 rounded-2">
-                    <span className="font-size-16 mb-0 fw-bold">SubTotal </span><span className="float-end ms-2">Rs. {data.price}</span>
+                    <span className="font-size-16 mb-0 fw-bold">SubTotal </span><span className="float-end ms-2">Rs. 30</span>
                   </div>
                   <div className="table-responsive">
                     <table className="table table-centered mb-0 table-nowrap">

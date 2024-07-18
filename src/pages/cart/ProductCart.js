@@ -12,6 +12,7 @@ const ProductCart = () => {
   let data = useSelector(x => x.product)
 
   const [totalBill, setTotalBill] = useState(0)
+  const [totalPrice, setTotalPrice] = useState()
 
   let handelInc = (product) => {
     dispatch(addToCart({ product, data: product.sizes }))
@@ -38,6 +39,11 @@ const ProductCart = () => {
   const formatPrice = (price) => {
     return `${price.toLocaleString()}`;
   };
+
+  const dispatchTotal = () =>{
+    dispatch(totalPrice(totalPrice))
+  }
+  console.log(totalPrice)
 
 
 
@@ -79,6 +85,7 @@ const ProductCart = () => {
                           </div>
                         </div>
                         <div className="col-lg-4 col-md-3 col-sm-3 col-12 greyColor cartText">Rs. {formatPrice(x.price * x.qnty)}</div>
+                        <div className="d-none">{setTotalPrice(x.price * x.qnty)}</div>
                       </div>
                     </div>
                   </>
@@ -95,8 +102,8 @@ const ProductCart = () => {
             <div className='d-block d-sm-none h6 fw-semibold'>SUBTOTAL : Rs. {formatPrice(totalBill)}</div>
             <p style={{fontSize:"0.8rem"}} className='d-none d-sm-block'>Tax included and shipping calculated at checkout</p>
             <p style={{fontSize:"0.65rem"}} className='d-block d-sm-none'>Tax included and shipping calculated at checkout</p>
-            <Link to='/shipping'><button className='btn btn-dark rounded-5 py-2 px-5 mx-auto d-none d-sm-block' >CheckOut</button></Link>
-            <Link to='/shipping'><button className='btn btn-dark rounded-5 py-2 px-4 mx-auto d-block d-sm-none' style={{fontSize:"0.8rem"}}>CheckOut</button></Link>
+            <Link to='/shipping'><button className='btn btn-dark rounded-5 py-2 px-5 mx-auto d-none d-sm-block' onClick={dispatchTotal()}>CheckOut</button></Link>
+            <Link to='/shipping'><button className='btn btn-dark rounded-5 py-2 px-4 mx-auto d-block d-sm-none' onClick={dispatchTotal()} style={{fontSize:"0.8rem"}}>CheckOut</button></Link>
             </div>
         </div>
       </div>
