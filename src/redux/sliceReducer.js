@@ -28,7 +28,10 @@ const productReducer = createSlice({
             return state = []
         },
         TotalPrice: (state, action) =>{
-            state.push({totalAmmount: action.payload.totalPrice})
+            return {
+                ...state,
+                totalAmmount: action.payload.totalPrice
+            };
         },
     },
 });
