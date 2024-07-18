@@ -26,10 +26,13 @@ const productReducer = createSlice({
         },
         clearCart: (state, action)=>{
             return state = []
-        }
+        },
+        TotalPrice: (state, action) =>{
+            return state.push({ ...product, totalPrice: action.payload.totalPrice});
+        },
     },
 });
 
-export const { addToCart, removeFromCart, removeSingleItem, clearCart } = productReducer.actions;
+export const { addToCart, removeFromCart, removeSingleItem, clearCart, TotalPrice } = productReducer.actions;
 
 export default productReducer.reducer;

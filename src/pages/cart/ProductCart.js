@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import { useDispatch } from 'react-redux'
-import { addToCart, removeFromCart, removeSingleItem } from '../../redux/sliceReducer'
+import { addToCart, removeFromCart, removeSingleItem, TotalPrice } from '../../redux/sliceReducer'
 import { Link } from 'react-router-dom'
 
 const ProductCart = () => {
@@ -41,7 +41,7 @@ const ProductCart = () => {
   };
 
   const dispatchTotal = () =>{
-    dispatch(totalPrice(totalPrice))
+    dispatch(TotalPrice(totalPrice))
   }
   console.log(totalPrice)
 
