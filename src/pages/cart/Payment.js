@@ -104,7 +104,7 @@ const Payment = () => {
                                             <div className="col-lg-3">
                                                 <div className="mb-3">
                                                     <label className="form-label" style={{ fontSize: "15px" }}>Expiry date</label>
-                                                    <input type="text" className="form-control" name='expire' onChange={handelChange} placeholder="MM/YY" />
+                                                    <input type="date" className="form-control" name='expire' onChange={handelChange} placeholder="MM/YY" />
                                                 </div>
                                             </div>
                                             <div className="col-lg-3">
