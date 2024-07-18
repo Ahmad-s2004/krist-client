@@ -228,7 +228,7 @@ const Shipping = () => {
                             <h6 className="font-size-14 m-0">Total:</h6>
                           </td>
                           <td>
-                            Rs. {data.price+400}
+                            Rs. 400
                           </td>
                         </tr>
                       </tbody>
