@@ -42,7 +42,7 @@ const ProductCart = () => {
   const dispatchTotal = () =>{
     dispatch(TotalPrice(totalBill))
   }
-  console.log(totalPrice)
+  console.log(totalBill)
 
 
 
