@@ -205,7 +205,7 @@ a{
         text-transform: uppercase;
     }
 
-    li{
+    li, .phoneNo{
         font-size: 13px!important;
     }
     
@@ -233,12 +233,12 @@ a{
         display: block;
         margin-bottom: -4px;
         color: #9da9b9;
-        font-size: 12px;
+        font-size: 10px;
     }
     .market-button .mb-title {
         display: block;
         color: #606975;
-        font-size: 18px;
+        font-size: 14px;
     }
     
 }
