@@ -12,7 +12,6 @@ const ProductCart = () => {
   let data = useSelector(x => x.product)
 
   const [totalBill, setTotalBill] = useState(0)
-  const [totalPrice, setTotalPrice] = useState()
 
   let handelInc = (product) => {
     dispatch(addToCart({ product, data: product.sizes }))
@@ -41,7 +40,7 @@ const ProductCart = () => {
   };
 
   const dispatchTotal = () =>{
-    dispatch(TotalPrice({totalPrice}))
+    dispatch(TotalPrice(totalBill))
   }
   console.log(totalPrice)
 
@@ -85,7 +84,6 @@ const ProductCart = () => {
                           </div>
                         </div>
                         <div className="col-lg-4 col-md-3 col-sm-3 col-12 greyColor cartText">Rs. {formatPrice(x.price * x.qnty)}</div>
-                        <div className="d-none">{setTotalPrice(x.price * x.qnty)}</div>
                       </div>
                     </div>
                   </>
