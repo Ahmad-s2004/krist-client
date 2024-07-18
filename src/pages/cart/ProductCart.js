@@ -37,7 +37,7 @@ const ProductCart = () => {
 
   const formatPrice = (price) => {
     return `${price.toLocaleString()}`;
-  };
+  };  
 
   const dispatchTotal = () =>{
     dispatch(TotalPrice(totalBill))
@@ -54,7 +54,7 @@ const ProductCart = () => {
         <div className="container">
           <div className="row d-flex align-items-center mt-3">
             {
-              data.map((x) => {
+              Array.isArray(data) && data.map((x) => {
                 return (
                   <>
                     <div className="col-lg-5 col-12 d-flex cartPart my-4">
