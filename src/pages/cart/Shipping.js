@@ -185,8 +185,8 @@ const Shipping = () => {
               </div>
               <div className="row my-4">
                 <div className="col">
-                  <a href="ecommerce-products.html" className="btn btn-link text-muted">
-                    <i className="mdi mdi-arrow-left me-1" /> Continue Shopping </a>
+                  <Link to='/' href="ecommerce-products.html" className="btn btn-link text-muted">
+                    <i className="mdi mdi-arrow-left me-1" /> Continue Shopping </Link>
                 </div> {/* end col */}
                 <div className="col">
                   <div className="text-end mt-2 mt-sm-0">
