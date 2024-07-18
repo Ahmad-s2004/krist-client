@@ -21,22 +21,19 @@ const productReducer = createSlice({
         },
         removeFromCart: (state, action) => {
             const productId = action.payload._id;
-            return state.cart.filter(item => item._id !== productId);
+            state.cart = state.cart.filter(item => item._id !== productId);
         },
         removeSingleItem: (state, action) => {
             const existingProduct = state.cart.find(item => item._id === action.payload.product._id);
             if (existingProduct && existingProduct.qnty > 1) {
                 existingProduct.qnty -= 1;
-            } 
+            }
         },
-        clearCart: (state, action)=>{
-            return state.cart = []
+        clearCart: (state) => {
+            state.cart = [];
         },
-        TotalPrice: (state, action) =>{
-            return {
-                ...state,
-                totalAmmount: action.payload.totalBill
-            };
+        TotalPrice: (state, action) => {
+            state.totalAmmount = action.payload.totalBill;
         },
     },
 });
