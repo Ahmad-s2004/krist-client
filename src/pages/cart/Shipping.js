@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux'
 
 const Shipping = () => {
 
+  let data = useSelector(x=>x.product.totalAmmount)
   const [response, setResponse] = useState('')
   const [inputs, setInputs] = useState({
     name: "",
@@ -200,7 +201,7 @@ const Shipping = () => {
               <div className="card checkout-order-summary">
                 <div className="card-body">
                   <div className="p-3 bg-light mb-3 rounded-2">
-                    <span className="font-size-16 mb-0 fw-bold">SubTotal </span><span className="float-end ms-2">Rs. 30</span>
+                    <span className="font-size-16 mb-0 fw-bold">SubTotal </span><span className="float-end ms-2">Rs. {data}</span>
                   </div>
                   <div className="table-responsive">
                     <table className="table table-centered mb-0 table-nowrap">
@@ -228,7 +229,7 @@ const Shipping = () => {
                             <h6 className="font-size-14 m-0">Total:</h6>
                           </td>
                           <td>
-                            Rs. 400
+                            Rs. {data + 400}
                           </td>
                         </tr>
                       </tbody>

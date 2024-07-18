@@ -2,15 +2,13 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaSearch, FaHeart, FaShoppingCart, FaUser, FaBars, FaTimes } from 'react-icons/fa';
 import './Navbar.css';
-import SearchIcon from '@mui/icons-material/Search';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import Badge from '@mui/material/Badge';
 import { useSelector } from 'react-redux';
 
 const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
   const [searchActive, setSearchActive] = useState(false);
-let data = useSelector(x=>x.product)
+  let data = useSelector(x=>x.product.cart)
 
 
   const [search, setSearch] = useState('');
