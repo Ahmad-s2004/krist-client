@@ -25,12 +25,12 @@ const Payment = () => {
     let navigate = useNavigate()
 
     let handelSubmit = async () => {
-        if(email == ''){
-            if(name == '' || cardNumber == '' || expire == '' || cvv == ''){
+        if(inputs.email == ''){
+            if(inputs.name == '' || inputs.cardNumber == '' || inputs.expire == '' || inputs.cvv == ''){
                 setError("Enter all Fields")
             }
         }
-        if(email != ''){
+        if(inputs.email != ''){
             setError('')
         }
         if(error == ''){
