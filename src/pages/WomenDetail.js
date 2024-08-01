@@ -73,7 +73,7 @@ const WomenDetail = () => {
                         {product.color && product.color.length > 0 &&
                             <div className='fw-semibold'>
                                 Color: {product.color.map((color, index) => (
-                                    <span key={index} className='text-uppercase'>{color}</span>
+                                    <span key={index} className='text-uppercase'>{color} </span>
                                 ))}
                             </div>
                         }
@@ -82,7 +82,7 @@ const WomenDetail = () => {
                         {product.color && product.color.length > 0 &&
                             <div className='fw-semibold'>
                                 Color: {product.color.map((color, index) => (
-                                    <span key={index} className='text-uppercase'>{color}</span>
+                                    <span key={index} className='text-uppercase'>{color} </span>
                                 ))}
                             </div>
                         }
