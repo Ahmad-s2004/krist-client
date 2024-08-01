@@ -69,11 +69,12 @@ const KidsDetail = () => {
                     <div className="price h5 d-none d-lg-block mt-3"><span className='text-decoration-line-through'>Rs. {product.price}</span> <span style={{ color: "red" }}>Rs. {Math.floor(product.price - product.price / product.salePercent)}</span></div>
                     <div className="price h6 d-block d-lg-none mt-3"><span className='text-decoration-line-through'>Rs. {product.price}</span> <span style={{ color: "red" }}>Rs. {Math.floor(product.price - product.price / product.salePercent)}</span></div>
                     <p className='pe-2 mt-4' style={{fontSize:"0.8rem"}}>{product.description}</p>
+                    {/* Color here */}
                     <div className="d-none d-lg-block my-2">
                         {product.color && product.color.length > 0 &&
                             <div className='fw-semibold'>
                                 Color: {product.color.map((color, index) => (
-                                    <span key={index} className='text-uppercase'>{color}</span>
+                                    <span key={index} className='text-uppercase'>{color} </span>
                                 ))}
                             </div>
                         }
@@ -82,11 +83,12 @@ const KidsDetail = () => {
                         {product.color && product.color.length > 0 &&
                             <div className='fw-semibold'>
                                 Color: {product.color.map((color, index) => (
-                                    <span key={index} className='text-uppercase'>{color}</span>
+                                    <span key={index} className='text-uppercase'>{color} </span>
                                 ))}
                             </div>
                         }
                     </div>
+                    {/* Sizes here */}
                     <div className="d-none d-lg-block">
                         {product.size && product.size.length > 0 &&
                             <div><span className='fw-semibold'>Size</span>: <span className='text-capitalize fw-semibold'>{data} years</span>
