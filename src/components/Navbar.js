@@ -101,13 +101,13 @@ const toggleSearch = () => {
       <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
         <ul className="nav-menu-items" onClick={showSidebar}>
           <li className="navbar-toggle">
-            <FaTimes className="menu-bars-close z-3" onClick={showSidebar} />
+            <FaTimes className="menu-bars-close z-3" style={{marginLeft:"85%"}} onClick={showSidebar} />
           </li>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/men">Men</Link></li>
-          <li><Link to="/women">Women</Link></li>
-          <li><Link to="/kids">Kids</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
+          <li className='hoverEffect'><Link className='ms-3' to="/">Home</Link></li>
+          <li className='hoverEffect'><Link className='ms-3' to="/men">Men</Link></li>
+          <li className='hoverEffect'><Link className='ms-3' to="/women">Women</Link></li>
+          <li className='hoverEffect'><Link className='ms-3' to="/kids">Kids</Link></li>
+          <li className='hoverEffect'><Link className='ms-3' to="/contact">Contact</Link></li>
         </ul>
       </nav>
     </>

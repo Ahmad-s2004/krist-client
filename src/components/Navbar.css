@@ -1,4 +1,21 @@
 /* Navbar.css */
+
+.hoverEffect{
+  transition: 0.4s ease;
+}
+.hoverEffect:hover{
+  background-color: #ccc;
+  transition: 0.4s ease;
+}
+
+
+
+
+
+
+
+
+
 .navbar {
     display: flex;
     align-items: center;

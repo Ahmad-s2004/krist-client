@@ -194,7 +194,9 @@ code {
 .serviceSection .descriptionService {
   font-size: 1rem;
 }
-
+.color-black{
+  color: black;
+}
 @media (max-width: 768px) {
   .serviceSection .iconService {
     font-size: 2rem;
