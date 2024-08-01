@@ -13,7 +13,7 @@ const Dashboard = () => {
   const[user, setUser] = useState([])
   const [showPassword, setShowPassword] = useState(false)
 
-  let fetchedData
+  var fetchedData
 
   let fetchUserData = async() =>{
     let token = localStorage.getItem('token')
@@ -76,11 +76,11 @@ let togglePassword = () =>{
                 <div className="row mt-4">
                   <div className="col my-3">
                     <div style={{fontSize:"13px"}}>Name</div>
-                    <input type="text" className="form-control" placeholder="First name" value='ahmad' readOnly aria-label="First name" />
+                    <input type="text" className="form-control" placeholder="First name" value={fetchedData.userInfo.name} readOnly aria-label="First name" />
                   </div>
                   <div className="col my-3">
                     <div style={{fontSize:"13px"}}>Email</div>
-                    <input type="email" className="form-control" placeholder="Last name" value='ahmad@gmail.com' readOnly aria-label="Last name" />
+                    <input type="email" className="form-control" placeholder="Last name" value={fetchedData.userInfo.email} readOnly aria-label="Last name" />
                   </div>
                 </div>
                 <div className="row">
@@ -89,7 +89,7 @@ let togglePassword = () =>{
       <input
         type={showPassword ? 'text' : 'password'}
         className="form-control"
-        value='ahmad'
+        value={fetchedData.userInfo.password}
         aria-label="Password"
       />
       <button
@@ -111,7 +111,7 @@ let togglePassword = () =>{
     </div>
                   <div className="col my-3">
                     <div style={{fontSize:"13px"}}>Phone</div>
-                    <input type="text" className="form-control" placeholder="Last name" value='03010875529' readOnly aria-label="Last name" />
+                    <input type="text" className="form-control" placeholder="Last name" value={fetchedData.userInfo.phone} readOnly aria-label="Last name" />
                   </div>
                 </div>
 
