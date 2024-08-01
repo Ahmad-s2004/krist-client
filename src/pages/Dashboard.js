@@ -24,6 +24,7 @@ const Dashboard = () => {
     res = await res.json()
     setUser(res)
     console.log(res, "here is the response")
+    console.log(user, "user erher")
   }
 
 
