@@ -3,19 +3,32 @@ import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom';
 import { FaPhoneAlt, FaTrash } from 'react-icons/fa';
 import axios from 'axios'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 
 const Dashboard = () => {
   const [value, setValue] = useState('dashboard');
   const[address, setAddress] = useState([])
+  const[user, setUser] = useState({})
+  const [showPassword, setShowPassword] = useState(false)
 
 
+  let fetchUserData = async() =>{
+    let token = localStorage.getItem('token')
+    let res = await fetch('https://krist-server.vercel.app/post/getUser',{
+      headers:{
+        Authorization:token
+      }
+    }, { withCredentials: true })
+    res = await res.json()
+    setUser(res)
+  }
   let fetchData = async() =>{
     let res = await fetch('https://krist-server.vercel.app/post/getAllAddress')
     res = await res.json()
     setAddress(res)
   }
-
   const removeAddress = async (id) => {
     try {
         let res = await fetch(`https://krist-server.vercel.app/post/removeAddress/${id}`,{
@@ -28,9 +41,13 @@ const Dashboard = () => {
     }
 };
 
+let togglePassword = () =>{
+  setShowPassword(!showPassword)
+}
 
   useEffect(()=>{
     fetchData()
+    fetchUserData()
   },[])
   return (
     <div>
@@ -61,10 +78,31 @@ const Dashboard = () => {
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col my-3">
-                    <div style={{fontSize:"13px"}}>Password</div>
-                    <input type="password" className="form-control" placeholder="First name" value='ahmad' readOnly aria-label="First name" />
-                  </div>
+                <div className="col my-3" style={{ position: 'relative' }}>
+      <div style={{ fontSize: "13px" }}>Password</div>
+      <input
+        type={showPassword ? 'text' : 'password'}
+        className="form-control"
+        value='ahmad'
+        aria-label="Password"
+      />
+      <button
+        onClick={togglePassword}
+        style={{
+          position: 'absolute',
+          right: '20px',
+          top: '65%',
+          transform: 'translateY(-50%)',
+          background: 'transparent',
+          border: 'none',
+          cursor: 'pointer',
+          outline: 'none',
+          padding: '0',
+        }}
+      >
+        <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+      </button>
+    </div>
                   <div className="col my-3">
                     <div style={{fontSize:"13px"}}>Phone</div>
                     <input type="text" className="form-control" placeholder="Last name" value='03010875529' readOnly aria-label="Last name" />
@@ -77,24 +115,30 @@ const Dashboard = () => {
               <div>
                 <div className='fw-semibold text-center mb-2'>Address </div>
                 <div className="container">
-                  <div className="row">
-                    {
-                      address.map(x=>{
-                        return(
-                          <>
-                          <div className="col-12 border m-1 py-1 rounded d-flex justify-content-between align-items-center">
-                            <div>
-                        <div className='name fw-semibold' style={{fontSize:"15px"}}>{x.name}</div>
-                        <div className='address' style={{fontSize:"13px"}} >{x.addresses}</div>
-                        <div className='phone' style={{fontSize:"13px"}}><FaPhoneAlt className='me-1'/> {x.phone}</div>
-                            </div>
-                      <div><button className='btn btn-dark ' onClick={()=>removeAddress(x._id)}><FaTrash/></button></div>
-                      </div>
-                          </>
-                        )
-                      })
-                    }
-                  </div>
+                <div className="row">
+      {address.length === 0 ? (
+        <div className="col-12 text-center my-3" style={{ fontSize: "15px", color: "#888" }}>
+          No addresses added
+        </div>
+      ) : (
+        address.map(x => (
+          <div key={x._id} className="col-12 border m-1 py-1 rounded d-flex justify-content-between align-items-center">
+            <div>
+              <div className='name fw-semibold' style={{ fontSize: "15px" }}>{x.name}</div>
+              <div className='address' style={{ fontSize: "13px" }}>{x.addresses}</div>
+              <div className='phone' style={{ fontSize: "13px" }}>
+                <FaPhoneAlt className='me-1' /> {x.phone}
+              </div>
+            </div>
+            <div>
+              <button className='btn btn-dark' onClick={() => removeAddress(x._id)}>
+                <FaTrash />
+              </button>
+            </div>
+          </div>
+        ))
+      )}
+    </div>
                 </div>
               </div>
             }
