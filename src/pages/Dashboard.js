@@ -74,7 +74,7 @@ let togglePassword = () =>{
                 <div className="row mt-4">
                   <div className="col my-3">
                     <div style={{fontSize:"13px"}}>Name</div>
-                    <input type="text" className="form-control" placeholder="First name" value={user.userInfo.email} readOnly aria-label="First name" />
+                    <input type="text" className="form-control" placeholder="First name" value='ahmad' readOnly aria-label="First name" />
                   </div>
                   <div className="col my-3">
                     <div style={{fontSize:"13px"}}>Email</div>
