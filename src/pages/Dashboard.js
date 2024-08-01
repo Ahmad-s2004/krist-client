@@ -13,6 +13,7 @@ const Dashboard = () => {
   const[user, setUser] = useState([])
   const [showPassword, setShowPassword] = useState(false)
 
+  let fetchedData
 
   let fetchUserData = async() =>{
     let token = localStorage.getItem('token')
@@ -23,8 +24,9 @@ const Dashboard = () => {
     }, { withCredentials: true })
     res = await res.json()
     setUser(res)
+    fetchedData = res
     console.log(res, "here is the response")
-    console.log(user, "user erher", user.userInfo)
+    console.log(fetchedData, "user erher", user.userInfo)
   }
 
 
