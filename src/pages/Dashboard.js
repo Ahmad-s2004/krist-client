@@ -26,7 +26,7 @@ const Dashboard = () => {
     setUser(res)
     fetchedData = res
     console.log(res, "here is the response")
-    console.log(fetchedData, "user erher", user.userInfo)
+    console.log(fetchedData, "user erher", fetchedData.userInfo)
   }
 
 
