@@ -18,12 +18,12 @@ const Dashboard = () => {
     let token = localStorage.getItem('token')
     let res = await fetch('https://krist-server.vercel.app/post/getUser',{
       headers:{
-        Authorization:token
+        'Authorization':token
       }
     }, { withCredentials: true })
     res = await res.json()
     setUser(res)
-    console.log(res)
+    console.log(res, "here is the response")
   }
   let fetchData = async() =>{
     let res = await fetch('https://krist-server.vercel.app/post/getAllAddress')
