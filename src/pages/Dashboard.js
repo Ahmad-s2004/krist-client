@@ -23,6 +23,7 @@ const Dashboard = () => {
     }, { withCredentials: true })
     res = await res.json()
     setUser(res)
+    console.log(res)
   }
   let fetchData = async() =>{
     let res = await fetch('https://krist-server.vercel.app/post/getAllAddress')
