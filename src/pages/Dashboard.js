@@ -49,7 +49,7 @@ const Dashboard = () => {
     res = await res.json()
     console.log(res, 'Addresses')
     setAddressz(res)
-    adde = [res]
+    adde = res
     console.log(typeof(adde))
     console.log(addressz, 'Addresses')
   }
@@ -134,17 +134,17 @@ let togglePassword = () =>{
                 </div>
               </div>
             }
-            {value === 'address' &&
+            {value === 'adde' ||
               <div>
                 <div className='fw-semibold text-center mb-2'>Address </div>
                 <div className="container">
                   <div className="row">
-                    {address.length === 0 ? (
+                    {adde.length === 0 ? (
                       <div className="col-12 text-center my-3" style={{ fontSize: "15px", color: "#888" }}>
                         No addresses added
                       </div>
                     ) : (
-                      address.map(x => (
+                      adde.map(x => (
                         <div key={x._id} className="col-12 border m-1 py-1 rounded d-flex justify-content-between align-items-center">
                           <div>
                             <div className='name fw-semibold' style={{ fontSize: "15px" }}>{x.name}</div>
