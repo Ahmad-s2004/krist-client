@@ -17,14 +17,14 @@ const Dashboard = () => {
 
   let fetchUserData = async() =>{
     let token = localStorage.getItem('token')
-    let res = await axios.get('http://localhost:5050/post/getUser',{
+    let res = await fetch('http://localhost:5050/post/getUser',{
       headers:{
-        Authorization:token
+        'Authorization':token
       }
     }, { withCredentials: true })
     res = await res.json()
     setUser(res)
-    console.log(res,)
+    console.log(res)
     console.log(user, "user erher")
   }
 
