@@ -34,13 +34,13 @@ const Dashboard = () => {
       password: res.findData.password,
       phone: res.findData.phone,
     });
-    console.log(user.findData.email, user.email, "here is the response")
+    // console.log(user.findData.email, user.email, "here is the response")
   }
 
 
   let fetchData = async() =>{
     let token = localStorage.getItem('token')
-    let res = await fetch('https://krist-server.vercel.app/post/getAddress',{
+    let res = await fetch('https://krist-server.vercel.app/post/getUserAddress',{
       headers:{
         Authorization : token
       }
