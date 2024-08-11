@@ -134,12 +134,12 @@ let togglePassword = () =>{
                 </div>
               </div>
             }
-            {value === 'adde' ||
+            {value === 'address' &&
               <div>
                 <div className='fw-semibold text-center mb-2'>Address </div>
                 <div className="container">
                   <div className="row">
-                    {address.length === 0 ? (
+                    {adde.length === 0 ? (
                       <div className="col-12 text-center my-3" style={{ fontSize: "15px", color: "#888" }}>
                         No addresses added
                       </div>
