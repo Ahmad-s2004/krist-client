@@ -21,7 +21,7 @@ const Dashboard = () => {
       headers:{
         'Authorization':token
       }
-    }, { withCredentials: true })
+    }, { withCredentials: 'include' })
     res = await res.json()
     setUser(res)
     fetchedData = res
