@@ -23,8 +23,8 @@ const Dashboard = () => {
       }
     }, { withCredentials: 'include' })
     res = await res.json()
-    setUser(res)
-    console.log(res.findData, "here is the response")
+    setUser(res.findData)
+    console.log(user, "here is the response")
   }
 
 
