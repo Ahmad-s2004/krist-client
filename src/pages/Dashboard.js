@@ -13,26 +13,33 @@ const Dashboard = () => {
   const[user, setUser] = useState([])
   const [showPassword, setShowPassword] = useState(false)
 
-  let fetchUserData = async () => {                         //commit
-    try {
-      let token = localStorage.getItem('token');
-      let res = await fetch('http://localhost:5050/post/getUser', {
-        headers: {
-          'Authorization': token,
-        },
-        withCredentials: true,
-      });
-      if (!res.ok) {
-        throw new Error('Failed to fetch user data');
+                         //commit
+    let fetchUserData = async () => {
+      try {
+        let token = localStorage.getItem('token');
+        console.log('Token:', token); // Check if the token is correctly retrieved
+    
+        let res = await fetch('http://localhost:5050/post/getUser', {
+          headers: {
+            'Authorization': token,
+          },
+          withCredentials: true,
+        });
+    
+        console.log('Response status:', res.status); // Log the response status
+    
+        if (!res.ok) {
+          throw new Error(`Failed to fetch user data, status: ${res.status}`);
+        }
+    
+        res = await res.json();
+        setUser(res);
+        console.log('User data:', res);
+      } catch (error) {
+        console.error('Error fetching user data:', error);
       }
-      res = await res.json();
-      setUser(res);
-      console.log(res);
-    } catch (error) {
-      console.error('Error fetching user data:', error);
-    }
-  };
-  
+    };
+    
 
   let fetchData = async() =>{
     let res = await fetch('https://krist-server.vercel.app/post/getAllAddress')
