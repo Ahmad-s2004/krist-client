@@ -10,7 +10,7 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 const Dashboard = () => {
   const [value, setValue] = useState('dashboard');
   const[address, setAddress] = useState([])
-  const[addressz, setAddressz] = useState([])
+  const[addressz, setAddressz] = useState({})
   const[user, setUser] = useState({
     email: "",
     name:"",
