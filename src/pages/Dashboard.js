@@ -11,6 +11,7 @@ const Dashboard = () => {
   const [value, setValue] = useState('dashboard');
   const[address, setAddress] = useState([])
   const[addressz, setAddressz] = useState({})
+  var adde
   const[user, setUser] = useState({
     email: "",
     name:"",
@@ -48,6 +49,8 @@ const Dashboard = () => {
     res = await res.json()
     console.log(res, 'Addresses')
     setAddressz(res)
+    adde = res
+    console.log(res)
     console.log(addressz, 'Addresses')
   }
   const removeAddress = async (id) => {
