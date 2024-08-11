@@ -10,22 +10,40 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 const Dashboard = () => {
   const [value, setValue] = useState('dashboard');
   const[address, setAddress] = useState([])
-  const[user, setUser] = useState({})
-  const [showPassword, setShowPassword] = useState(false)
-
-  var fetchedData
-
-  let fetchUserData = async() =>{
-    let token = localStorage.getItem('token')
-    let res = await fetch('https://krist-server.vercel.app/post/getUser',{
-      headers:{
-        Authorization : token
+  const [user, setUser] = useState({}); 
+  const [showPassword, setShowPassword] = useState(false);
+  
+  let fetchUserData = async () => {
+    try {
+      let token = localStorage.getItem('token');
+      let res = await fetch('https://krist-server.vercel.app/post/getUser', {
+        method: 'GET',
+        headers: {
+          Authorization: token,
+          // 'Content-Type': 'application/json',
+        },
+        credentials: 'include'
+      });
+  
+      if (!res.ok) {
+        throw new Error(`Failed to fetch user data, status: ${res.status}`);
       }
-    }, { withCredentials: 'include' })
-    res = await res.json()
-    setUser(res)
-    console.log(res, "here is the response")
-  }
+  
+      let data = await res.json();
+      
+      if (data.message === 'Data found') {
+        setUser(data.findData);
+      } else {
+        console.error('Error:', data.message);
+        setUser({});
+      }
+  
+      console.log(data, "here is the response");
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+    }
+  };
+  
 
 
   let fetchData = async() =>{
