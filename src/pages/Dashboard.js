@@ -103,7 +103,7 @@ let togglePassword = () =>{
                     <input
                       type={showPassword ? 'text' : 'password'}
                       className="form-control"
-                      placeholder={user.password || ''}
+                      value={user.password || ''}
                       aria-label="Password"
                     />
                     <button
