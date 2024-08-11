@@ -49,9 +49,8 @@ const Dashboard = () => {
     res = await res.json()
     console.log(res, 'Addresses')
     setAddressz(res)
-    adde = res
-    let data = Object.values(adde)
-    console.log(typeof(data))
+    adde = [res]
+    console.log(typeof(adde))
     console.log(addressz, 'Addresses')
   }
   const removeAddress = async (id) => {
