@@ -10,7 +10,7 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 const Dashboard = () => {
   const [value, setValue] = useState('dashboard');
   const[address, setAddress] = useState([])
-  const[user, setUser] = useState()
+  const[user, setUser] = useState({})
   const [showPassword, setShowPassword] = useState(false)
 
   var fetchedData
@@ -24,7 +24,7 @@ const Dashboard = () => {
     }, { withCredentials: 'include' })
     res = await res.json()
     setUser(res)
-    console.log(user, "here is the response")
+    console.log(res, "here is the response")
   }
 
 
