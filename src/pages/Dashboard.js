@@ -24,7 +24,8 @@ const Dashboard = () => {
     }, { withCredentials: true })
     res = await res.json()
     setUser(res)
-    console.log(fetchedData, "user erher")
+    console.log(res,)
+    console.log(user, "user erher")
   }
 
 
