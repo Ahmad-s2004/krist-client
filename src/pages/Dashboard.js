@@ -84,7 +84,7 @@ let togglePassword = () =>{
                 <div className="row mt-4">
                   <div className="col my-3">
                     <div style={{ fontSize: "13px" }}>Name</div>
-                    <input type="text" className="form-control" placeholder="First name" value={user.userInfo?.name || ''} readOnly aria-label="First name" />
+                    <input type="text" className="form-control" placeholder={user.name || ''}  readOnly aria-label="First name" />
                   </div>
                   <div className="col my-3">
                     <div style={{ fontSize: "13px" }}>Email</div>
@@ -97,7 +97,7 @@ let togglePassword = () =>{
                     <input
                       type={showPassword ? 'text' : 'password'}
                       className="form-control"
-                      value={user.userInfo?.password || ''}
+                      placeholder={user.password || ''}
                       aria-label="Password"
                     />
                     <button
@@ -119,7 +119,7 @@ let togglePassword = () =>{
                   </div>
                   <div className="col my-3">
                     <div style={{ fontSize: "13px" }}>Phone</div>
-                    <input type="text" className="form-control" placeholder="Last name" value={user.userInfo?.phone || ''} readOnly aria-label="Last name" />
+                    <input type="text" className="form-control" placeholder={user.phone || ''} readOnly aria-label="Last name" />
                   </div>
                 </div>
               </div>
