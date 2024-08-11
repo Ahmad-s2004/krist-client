@@ -10,6 +10,7 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 const Dashboard = () => {
   const [value, setValue] = useState('dashboard');
   const[address, setAddress] = useState([])
+  const[addressz, setAddressz] = useState([])
   const[user, setUser] = useState({
     email: "",
     name:"",
@@ -46,7 +47,7 @@ const Dashboard = () => {
     }, { withCredentials: 'include' })
     res = await res.json()
     console.log(res, 'Addresses')
-    // setAddress(res)
+    setAddressz(res)
   }
   const removeAddress = async (id) => {
     try {
