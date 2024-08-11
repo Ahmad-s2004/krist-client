@@ -19,7 +19,7 @@ const Dashboard = () => {
     let token = localStorage.getItem('token')
     let res = await axios.get('http://localhost:5050/post/getUser',{
       headers:{
-        'Authorization':token
+        Authorization:token
       }
     }, { withCredentials: true })
     res = await res.json()
