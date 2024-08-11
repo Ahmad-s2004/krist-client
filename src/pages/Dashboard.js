@@ -28,11 +28,12 @@ const Dashboard = () => {
       }
     }, { withCredentials: 'include' })
     res = await res.json()
-    setUser.email(res.findData.email)
-    setUser.password(res.findData.password)
-    setUser.phone(res.findData.phone)
-    setUser.name(res.findData.name)
-
+    setUser({
+      email: res.findData.email,
+      name: res.findData.name,
+      password: res.findData.password,
+      phone: res.findData.phone,
+    });
     console.log(user.findData.email, user.email, "here is the response")
   }
 
