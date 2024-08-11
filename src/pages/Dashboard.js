@@ -34,7 +34,6 @@ const Dashboard = () => {
       password: res.findData.password,
       phone: res.findData.phone,
     });
-    // console.log(user.findData.email, user.email, "here is the response")
   }
 
 
@@ -47,7 +46,7 @@ const Dashboard = () => {
     }, { withCredentials: 'include' })
     res = await res.json()
     console.log(res, 'Addresses')
-    setAddress(res)
+    // setAddress(res)
   }
   const removeAddress = async (id) => {
     try {
