@@ -2,77 +2,82 @@ import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom';
 import { FaPhoneAlt, FaTrash } from 'react-icons/fa';
-import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
-
 const Dashboard = () => {
   const [value, setValue] = useState('dashboard');
-  const[address, setAddress] = useState([])
-  const[addressz, setAddressz] = useState({})
-  var adde
-  const[user, setUser] = useState({
+  const [address, setAddress] = useState([]);
+  const [user, setUser] = useState({
     email: "",
-    name:"",
-    password:"",
-    phone:"",
-  })
-  const [showPassword, setShowPassword] = useState(false)
+    name: "",
+    password: "",
+    phone: "",
+  });
+  const [showPassword, setShowPassword] = useState(false);
 
-  var fetchedData
+  const fetchUserData = async () => {
+    try {
+      let token = localStorage.getItem('token');
+      let res = await fetch('https://krist-server.vercel.app/post/getUser', {
+        headers: {
+          Authorization: token,
+        },
+      }, { withCredentials: 'include' });
+      res = await res.json();
+      setUser({
+        email: res.findData.email,
+        name: res.findData.name,
+        password: res.findData.password,
+        phone: res.findData.phone,
+      });
+    } catch (error) {
+      console.error("Error fetching user data:", error);
+    }
+  };
 
-  let fetchUserData = async() =>{
-    let token = localStorage.getItem('token')
-    let res = await fetch('https://krist-server.vercel.app/post/getUser',{
-      headers:{
-        Authorization : token
-      }
-    }, { withCredentials: 'include' })
-    res = await res.json()
-    setUser({
-      email: res.findData.email,
-      name: res.findData.name,
-      password: res.findData.password,
-      phone: res.findData.phone,
-    });
-  }
+  const fetchData = async () => {
+    try {
+      let token = localStorage.getItem('token');
+      let res = await fetch('https://krist-server.vercel.app/post/getUserAddress', {
+        headers: {
+          Authorization: token,
+        },
+      }, { withCredentials: 'include' });
+      res = await res.json();
+      setAddress(res);
+    } catch (error) {
+      console.error("Error fetching addresses:", error);
+    }
+  };
 
-
-  let fetchData = async() =>{
-    let token = localStorage.getItem('token')
-    let res = await fetch('https://krist-server.vercel.app/post/getUserAddress',{
-      headers:{
-        Authorization : token
-      }
-    }, { withCredentials: 'include' })
-    res = await res.json()
-    console.log(res, 'Addresses')
-    setAddressz(res)
-    adde = res
-    console.log(typeof(adde))
-    console.log(addressz, 'Addresses')
-  }
   const removeAddress = async (id) => {
     try {
-        let res = await fetch(`https://krist-server.vercel.app/post/removeAddress/${id}`,{
-        method: "delete"
-    })
-        console.log("Response:", res.data);
+      let res = await fetch(`https://krist-server.vercel.app/post/removeAddress/${id}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: localStorage.getItem('token'),
+        },
+      });
+      if (res.ok) {
         fetchData();
+      } else {
+        console.error("Failed to remove address");
+      }
     } catch (error) {
-        console.error("Error in removeAddress:", error.response ? error.response.data : error.message, error);
+      console.error("Error removing address:", error);
     }
-};
+  };
 
-let togglePassword = () =>{
-  setShowPassword(!showPassword)
-}
+  const togglePassword = () => {
+    setShowPassword(!showPassword);
+  };
 
-  useEffect(()=>{
-    fetchData()
-    fetchUserData()
-  },[])
+  useEffect(() => {
+    fetchData();
+    fetchUserData();
+  }, []);
+
   return (
     <div>
       <Navbar className="sticky-top" />
@@ -90,11 +95,11 @@ let togglePassword = () =>{
           <div className="col-lg-8 col-md-8 col-12">
             {value === 'dashboard' &&
               <div className='ps-4'>
-                <div className="title">Account Details : </div>
+                <div className="title">Account Details:</div>
                 <div className="row mt-4">
                   <div className="col my-3">
                     <div style={{ fontSize: "13px" }}>Name</div>
-                    <input type="text" className="form-control" placeholder={user.name || ''}  readOnly aria-label="First name" />
+                    <input type="text" className="form-control" placeholder={user.name || ''} readOnly aria-label="First name" />
                   </div>
                   <div className="col my-3">
                     <div style={{ fontSize: "13px" }}>Email</div>
@@ -109,6 +114,7 @@ let togglePassword = () =>{
                       className="form-control"
                       value={user.password || ''}
                       aria-label="Password"
+                      readOnly
                     />
                     <button
                       onClick={togglePassword}
@@ -136,15 +142,15 @@ let togglePassword = () =>{
             }
             {value === 'address' &&
               <div>
-                <div className='fw-semibold text-center mb-2'>Address </div>
+                <div className='fw-semibold text-center mb-2'>Addresses</div>
                 <div className="container">
                   <div className="row">
-                    {adde == [] || adde == {} ? (
+                    {address.length === 0 ? (
                       <div className="col-12 text-center my-3" style={{ fontSize: "15px", color: "#888" }}>
                         No addresses added
                       </div>
                     ) : (
-                      adde.map(x => (
+                      address.map(x => (
                         <div key={x._id} className="col-12 border m-1 py-1 rounded d-flex justify-content-between align-items-center">
                           <div>
                             <div className='name fw-semibold' style={{ fontSize: "15px" }}>{x.name}</div>
@@ -170,7 +176,6 @@ let togglePassword = () =>{
       </div>
     </div>
   );
-  
-}
+};
 
 export default Dashboard;
