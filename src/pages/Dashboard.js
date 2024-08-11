@@ -50,7 +50,8 @@ const Dashboard = () => {
     console.log(res, 'Addresses')
     setAddressz(res)
     adde = res
-    console.log(typeof(adde))
+    let data = Object.values(adde)
+    console.log(typeof(data))
     console.log(addressz, 'Addresses')
   }
   const removeAddress = async (id) => {
