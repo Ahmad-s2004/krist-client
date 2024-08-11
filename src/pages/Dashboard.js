@@ -19,7 +19,7 @@ const Dashboard = () => {
         let token = localStorage.getItem('token');
         console.log('Token:', token); // Check if the token is correctly retrieved
     
-        let res = await fetch('http://localhost:5050/post/getUser', {
+        let res = await fetch('https://krist-server.vercel.app/post/getUser', {
           headers: {
             Authorization: token,
           },
