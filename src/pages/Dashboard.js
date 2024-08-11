@@ -39,8 +39,14 @@ const Dashboard = () => {
 
 
   let fetchData = async() =>{
-    let res = await fetch('https://krist-server.vercel.app/post/getAllAddress')
+    let token = localStorage.getItem('token')
+    let res = await fetch('https://krist-server.vercel.app/post/getAddress',{
+      headers:{
+        Authorization : token
+      }
+    }, { withCredentials: 'include' })
     res = await res.json()
+    console.log(res, 'Addresses')
     setAddress(res)
   }
   const removeAddress = async (id) => {
