@@ -21,7 +21,7 @@ const Dashboard = () => {
     
         let res = await fetch('http://localhost:5050/post/getUser', {
           headers: {
-            'Authorization': token,
+            Authorization: token,
           },
           withCredentials: true,
         });
