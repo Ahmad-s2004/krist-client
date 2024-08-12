@@ -174,7 +174,7 @@ const Shipping = () => {
                           <div className="mb-3">
                             <div className="row">
                               {
-                                product.length == 0?
+                                product.length === 0?
                                 (
                                   <>
                                   <div className="col-12 text-center my-3" style={{ fontSize: "15px", color: "#888" }}>
