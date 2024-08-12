@@ -54,11 +54,21 @@ const Shipping = () => {
     }
   };
 
-  let fetchData = async() =>{
-    let res = await fetch('https://krist-server.vercel.app/post/getAllAddress')
-    res = await res.json()
-    setProduct(res)
-  }
+  const fetchData = async () => {
+    try {
+      let token = localStorage.getItem('token');
+      let res = await fetch('https://krist-server.vercel.app/post/getUserAddress', {
+        headers: {
+          Authorization: token,
+        },
+      }, { withCredentials: 'include' });
+      res = await res.json();
+      setProduct(res);
+      console.log(address, "Here is the address")
+    } catch (error) {
+      console.error("Error fetching addresses: ", error);
+    }
+  };
 
 
   useEffect(()=>{
