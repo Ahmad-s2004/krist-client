@@ -55,18 +55,20 @@ const Shipping = () => {
   };
 
   const fetchData = async () => {
-    try {
-      let token = localStorage.getItem('token');
-      let res = await fetch('https://krist-server.vercel.app/post/getUserAddress', {
-        headers: {
-          Authorization: token,
-        },
-      }, { withCredentials: 'include' });
-      res = await res.json();
-      setProduct(res);
-      console.log(product, "Here is the address")
-    } catch (error) {
-      console.error("Error fetching addresses: ", error);
+    let token = localStorage.getItem('token');
+    if(token){
+      try {
+        let res = await fetch('https://krist-server.vercel.app/post/getUserAddress', {
+          headers: {
+            Authorization: token,
+          },
+        }, { withCredentials: 'include' });
+        res = await res.json();
+        setProduct(res);
+        console.log(product, "Here is the address")
+      } catch (error) {
+        console.error("Error fetching addresses: ", error);
+      }
     }
   };
 
@@ -91,7 +93,6 @@ const Shipping = () => {
   }
 
 
-  console.log(totalAmmount, typeof(totalAmmount), 'asdasnbn')
 
   return (
     <div>
