@@ -64,7 +64,7 @@ const Shipping = () => {
       }, { withCredentials: 'include' });
       res = await res.json();
       setProduct(res);
-      console.log(address, "Here is the address")
+      console.log(product, "Here is the address")
     } catch (error) {
       console.error("Error fetching addresses: ", error);
     }
@@ -174,6 +174,14 @@ const Shipping = () => {
                           <div className="mb-3">
                             <div className="row">
                               {
+                                product.length == 0?
+                                (
+                                  <>
+                                  <div className="col-12 text-center my-3" style={{ fontSize: "15px", color: "#888" }}>
+                                       No addresses added
+                                   </div>
+                                  </>
+                                ) : (
                                 product.map((x, i)=>{
                                   return(
                                     <div className="col-lg-4 col-sm-6">
@@ -191,6 +199,7 @@ const Shipping = () => {
                               </div>
                                   )
                                 })
+                              )
                               }
                             </div>
                           </div>
