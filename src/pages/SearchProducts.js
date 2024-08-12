@@ -7,21 +7,7 @@ const SearchProducts = () => {
 
   const [product, setProduct] = useState([])
   const [loading, setLoading] = useState(true)
-  const [local, setLocal] = useState({
-    category: "",
-    name:""
-  })
-  const { search } = useParams()
 
-  if(local.category == 'Kids'){
-    setLocal.name("getKids")
-  }
-  if(local.category == 'Men'){
-    setLocal.name("getMen")
-  }
-  if(local.category == 'Women'){
-    setLocal.name("getWomen")
-  }
   useEffect(() => {
     let fetchData = async () => {
       let res = await fetch(`https://krist-server.vercel.app/product/getProducts?search=${search}`)
@@ -47,7 +33,7 @@ const SearchProducts = () => {
                       <div className="sale my-auto">{Number(x.salePercent)}%</div>
                       <img src={`https://krist-server.vercel.app//${x.gallery[0].img1}`} className="card-img-top primary" alt="Primary" />
                       <img src={`https://krist-server.vercel.app//${x.gallery[0].img2}`} className="card-img-top secondary" alt="Secondary" />
-                      <Link className="button" onClick={()=>{setLocal.category(x.category)}} to={`/${local.name}/${x._id}`}>Quick View</Link>
+                      <Link className="button" to={`/get${x.category}/${x._id}`}>Quick View</Link>
                     </div>
 
                     <div className="card-body">
