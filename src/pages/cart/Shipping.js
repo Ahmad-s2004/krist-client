@@ -42,9 +42,15 @@ const Shipping = () => {
         }
       }, { withCredentials: true });
         setResponse(res.data.message)
+        setTimeout(()=>{
+          setResponse("")
+        }, 1000)
     } catch (err) {
       console.error(err)
       setResponse(err.response.data.message);
+      setTimeout(()=>{
+        setResponse("")
+      }, 1000)
     }
   };
 
