@@ -46,8 +46,9 @@ const Dashboard = () => {
       }, { withCredentials: 'include' });
       res = await res.json();
       setAddress(res);
+      console.log(address, "Here is the address")
     } catch (error) {
-      console.error("Error fetching addresses:", error);
+      console.error("Error fetching addresses: ", error);
     }
   };
 
