@@ -79,6 +79,7 @@ const Home = () => {
                         <div className='card-img-container'>
                           <img src={`https://krist-server.vercel.app/${x.gallery[0].img1}`} className="card-img-top primary" alt="Primary" />
                           <img src={`https://krist-server.vercel.app/${x.gallery[0].img2}`} className="card-img-top secondary" alt="Secondary" />
+                          <Link className="button" to={`/get${x.category}/${x._id}`}>Quick View</Link>
                         </div>
                         <div className="card-body">
                           <p className="card-text fw-semibold d-none d-lg-block" style={{ fontSize: "0.85rem" }}>{x.title}</p>
