@@ -8,6 +8,7 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 const Dashboard = () => {
   const [value, setValue] = useState('dashboard');
   const [address, setAddress] = useState([]);
+  const [loading, setLoading] = useState(true)
   const [user, setUser] = useState({
     email: "",
     name: "",
@@ -25,6 +26,7 @@ const Dashboard = () => {
         },
       }, { withCredentials: 'include' });
       res = await res.json();
+      setLoading(false)
       setUser({
         email: res.findData.email,
         name: res.findData.name,
@@ -81,6 +83,26 @@ const Dashboard = () => {
 
   return (
     <div>
+      {loading?
+      <>
+      <div className="d-none d-sm-block">
+      <div className="d-flex justify-content-center align-items-center" style={{height:"550px"}}> 
+        <div className="spinner-border" role="status">
+          <span className="sr-only">Loading...</span>
+        </div>
+      </div>
+      </div>
+      <div className="d-block d-sm-none ">
+      <div className="d-flex justify-content-center align-items-center" style={{height:"550px"}}> 
+        <div className="spinner-border" role="status">
+          <span className="sr-only">Loading...</span>
+        </div>
+      </div>
+      </div>
+      </>
+
+   : 
+   <>
       <Navbar className="sticky-top" />
       <div className="container mt-5">
         <div className="row">
@@ -175,6 +197,8 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+   </>
+    }
     </div>
   );
 };
