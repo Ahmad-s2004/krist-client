@@ -37,7 +37,7 @@ const SearchProducts = () => {
                     </div>
 
                     <div className="card-body">
-                      <h5 className="card-title d-none d-lg-block h6">{x.title.slice(0, 40)}...</h5>
+                      <h5 className="card-title d-none d-lg-block h6">{x.title.slice(0, 40)}... </h5>
                       <h5 className="card-title d-block d-lg-none" style={{ fontSize: "0.8rem" }}>{x.title.slice(0, 40)}...</h5>
                       <p className="card-text d-none d-lg-block">Rs. {Math.floor(x.price - x.price / x.salePercent)}</p>
                       <p className="card-text d-block d-lg-none" style={{ fontSize: "0.8rem" }}>Rs. {Math.floor(x.price - x.price / x.salePercent)}</p>
