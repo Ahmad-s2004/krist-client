@@ -74,7 +74,7 @@ const Footer = () => {
               <form className="subscribe-form" action="#" method="post" target="_blank" noValidate>
                 <div className="clearfix">
                   <div className="input-group input-light">
-                    <input className="form-control" type="email" name="EMAIL" width={100} placeholder="Your e-mail" /><span className="input-group-addon"><i className="icon-mail" /></span>
+                    <input className="form-control rounded" type="email" name="EMAIL" width={100} placeholder="Your e-mail" /><span className="input-group-addon"><i className="icon-mail" /></span>
                   </div>
                   <button className="btn btn-primary mt-2 linkSupport" type="submit">Suscbribe</button>
                 </div><span className="form-text text-sm text-white opacity-50 linkSupport">Subscribe to our Newsletter to receive early discount offers, latest news, sales and promo information.</span>
