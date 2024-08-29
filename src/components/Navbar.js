@@ -67,7 +67,7 @@ const toggleSearch = () => {
               localStorage.getItem('token')?
               <Link to="/dashboard"><FaUser className="icon" /></Link>
               :
-              <Link to="/login"><FaUser className="icon" /></Link>
+              <Link to="/signin"><FaUser className="icon" /></Link>
             }
           </span>
           <span><Link to="/cart">
