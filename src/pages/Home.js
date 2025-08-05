@@ -66,7 +66,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="bestCollection mx-1 py-1">
+        <div className="bestCollection mx-1">
           <div className="d-none d-md-block h3 text-center mb-4 mt-5">Our Bestsellers</div>
           <div className="d-block d-md-none h6 text-center mb-4 mt-5">Our Bestsellers</div>
           <div className="container-fluid px-3">
@@ -136,22 +136,14 @@ const Home = () => {
       <Footer />
       </>
       :
-          <>
-          <div className="d-none d-sm-block">
-          <div className="d-flex justify-content-center align-items-center"> 
-            <div className="spinner-border" role="status">
-              <span className="sr-only">Loading...</span>
-            </div>
-          </div>
-          </div>
-          <div className="d-block d-sm-none bg-info">
-          <div className="d-flex justify-content-center align-items-center"> 
-            <div className="spinner-border" role="status">
-              <span className="sr-only">Loading...</span>
-            </div>
-          </div>
-          </div>
-          </>
+      <>
+      <div className="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center bg-white" style={{ zIndex: 9999 }}>
+        <div className="spinner-border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </>
+    
     }
     </>
   )
