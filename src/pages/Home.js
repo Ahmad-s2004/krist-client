@@ -66,7 +66,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="bestCollection mx-1">
+        <div className="bestCollection mx-1 py-1">
           <div className="d-none d-md-block h3 text-center mb-4 mt-5">Our Bestsellers</div>
           <div className="d-block d-md-none h6 text-center mb-4 mt-5">Our Bestsellers</div>
           <div className="container-fluid px-3">
