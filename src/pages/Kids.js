@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import '../components/Filter.css';
 import CloseIcon from '@mui/icons-material/Close';
+import Loader from '../components/Loader';
 
 const Kids = () => {
   const [products, setProducts] = useState([]);
@@ -163,28 +164,10 @@ const Kids = () => {
     </>
   );
 
-  const Loading = () => (
-    <>
-      <div className="d-none d-sm-block">
-        <div className="d-flex justify-content-center align-items-center" style={{ height: "550px" }}>
-          <div className="spinner-border" role="status">
-            <span className="sr-only">Loading...</span>
-          </div>
-        </div>
-      </div>
-      <div className="d-block d-sm-none ">
-        <div className="d-flex justify-content-center align-items-center" style={{ height: "550px" }}>
-          <div className="spinner-border" role="status">
-            <span className="sr-only">Loading...</span>
-          </div>
-        </div>
-      </div>
-    </>
-  );
 
   return (
     <>
-      {loading ? <Loading /> : <ShowProduct />}
+      {loading ? <Loader /> : <ShowProduct />}
     </>
   );
 };

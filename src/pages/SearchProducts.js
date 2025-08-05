@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { Link, useParams } from 'react-router-dom'
+import Loader from '../components/Loader'
 
 const SearchProducts = () => {
 
@@ -65,26 +66,6 @@ const SearchProducts = () => {
   }
 
 
-  let Loading = () => {
-    return (
-      <>
-        <div className="d-none d-sm-block">
-          <div className="d-flex justify-content-center align-items-center" style={{ height: "550px" }}>
-            <div className="spinner-border" role="status">
-              <span className="sr-only">Loading...</span>
-            </div>
-          </div>
-        </div>
-        <div className="d-block d-sm-none ">
-          <div className="d-flex justify-content-center align-items-center" style={{ height: "550px" }}>
-            <div className="spinner-border" role="status">
-              <span className="sr-only">Loading...</span>
-            </div>
-          </div>
-        </div>
-      </>
-    )
-  }
   return (
 
     <>
@@ -92,7 +73,7 @@ const SearchProducts = () => {
       <div>
         {
           loading ? (
-            <Loading />
+            <Loader />
           ) : product.length === 0 ? (
             <NotFound />
           ) : (

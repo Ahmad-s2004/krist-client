@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useDispatch } from 'react-redux';
 import {addToCart} from '../redux/sliceReducer'
+import Loader from '../components/Loader';
 
 
 const WomenDetail = () => {
@@ -118,24 +119,7 @@ const WomenDetail = () => {
         <Footer/>
     </div>
     :
-    <>
-      <div className="d-none d-sm-block">
-      <div className="d-flex justify-content-center align-items-center" style={{height:"550px"}}> 
-        <div className="spinner-border" role="status">
-          <span className="sr-only">Loading...</span>
-        </div>
-      </div>
-      </div>
-      <div className="d-block d-sm-none ">
-      <div className="d-flex justify-content-center align-items-center" style={{height:"550px"}}> 
-        <div className="spinner-border" role="status">
-          <span className="sr-only">Loading...</span>
-        </div>
-      </div>
-      </div>
-      
-      
-      </>
+    <Loader/>
        }
         </>
     )
