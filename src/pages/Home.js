@@ -138,14 +138,14 @@ const Home = () => {
       :
           <>
           <div className="d-none d-sm-block">
-          <div className="d-flex justify-content-center align-items-center" style={{height:"550px"}}> 
+          <div className="d-flex justify-content-center align-items-center"> 
             <div className="spinner-border" role="status">
               <span className="sr-only">Loading...</span>
             </div>
           </div>
           </div>
-          <div className="d-block d-sm-none ">
-          <div className="d-flex justify-content-center align-items-center" style={{height:"550px"}}> 
+          <div className="d-block d-sm-none bg-info">
+          <div className="d-flex justify-content-center align-items-center"> 
             <div className="spinner-border" role="status">
               <span className="sr-only">Loading...</span>
             </div>
