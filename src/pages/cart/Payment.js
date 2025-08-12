@@ -66,7 +66,7 @@ const Payment = () => {
         <div>
             <Navbar />
             <div className="container mt-4 font-poppins">
-                <h1 className="h5">Payment</h1>
+                <h1 className="font-size-16">Payment</h1>
                 <div className='text-center' style={{color:"red"}}>{error}</div>
                 <div className="row">
                     <div className="col-lg-9">

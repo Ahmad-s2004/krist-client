@@ -157,7 +157,7 @@ const Shipping = () => {
                                       <input type="text" className="form-control" id="zip-code" name='postal' onChange={handelChange} placeholder="Enter Postal code" />
                                     </div>
                                   </div>
-                                  <button type="submit" className="btn btn-dark ms-2 mt-2" style={{ width: "100px" }}>
+                                  <button type="submit" className="btn btn-dark ms-3 mt-2" style={{ width: "100px" }}>
                                     Submit
                                   </button>
                                 </div>
@@ -167,6 +167,7 @@ const Shipping = () => {
                         </div>
                       </div>
                     </li>
+                    <hr />
                     <li className="checkout-itm">
                       <div className="feed-item-list">
                         <div>
@@ -220,7 +221,7 @@ const Shipping = () => {
                 <div className="col">
                   <div className="text-end mt-2 mt-sm-0">
                     <Link to="/payment" className="btn btn-dark">
-                      <i className="mdi mdi-cart-outline me-1" /> Procced </Link>
+                      <i className="mdi mdi-cart-outline fw-normal me-1" /> Procced </Link>
                   </div>
                 </div> {/* end col */}
               </div> {/* end row*/}
@@ -229,7 +230,7 @@ const Shipping = () => {
               <div className="card checkout-order-summary">
                 <div className="card-body">
                   <div className="p-3 bg-light mb-3 rounded-2">
-                    <span className="font-size-16 mb-0 fw-bold">SubTotal </span><span className="float-end ms-2">Rs. {totalAmmount}</span>
+                    <span className="font-size-16 mb-0 fw-medium">SubTotal </span><span className="float-end ms-2">Rs. {totalAmmount}</span>
                   </div>
                   <div className="table-responsive">
                     <table className="table table-centered mb-0 table-nowrap">
@@ -246,7 +247,7 @@ const Shipping = () => {
                         </tr> */}
                         <tr>
                           <td colSpan={2}>
-                            <h6 className="font-size-14 m-0">Shipping Charge :</h6>
+                            <h6 className="font-size-14 fw-normal m-0">Shipping Charge :</h6>
                           </td>
                           <td>
                             Rs. 400
@@ -254,7 +255,7 @@ const Shipping = () => {
                         </tr>
                         <tr className="bg-light">
                           <td colSpan={2}>
-                            <h6 className="font-size-14 m-0">Total:</h6>
+                            <h6 className="font-size-14 fw-normal m-0">Total:</h6>
                           </td>
                           <td>
                             Rs. {totalAmmount + 400}
