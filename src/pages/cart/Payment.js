@@ -66,7 +66,7 @@ const Payment = () => {
         <div>
             <Navbar />
             <div className="container mt-4 font-poppins">
-                <h1 className="font-size-16">Payment</h1>
+                <h1 className="font-size-16 ms-2">Payment</h1>
                 <div className='text-center' style={{color:"red"}}>{error}</div>
                 <div className="row">
                     <div className="col-lg-9">
@@ -75,7 +75,7 @@ const Payment = () => {
                                 <h2 className="h5 px-4 py-3 accordion-header d-flex justify-content-between align-items-center">
                                     <div className="form-check w-100 collapsed" data-bs-toggle="collapse" data-bs-target="#collapseCC" aria-expanded="false">
                                         <input className="form-check-input" type="radio" name="payment" id="payment1" />
-                                        <label className="form-check-label h6 pt-1" htmlFor="payment1">
+                                        <label className="form-check-label pt-1 font-size-15 fnt-sm-14" htmlFor="payment1">
                                             Credit Card
                                         </label>
                                     </div>
@@ -91,25 +91,25 @@ const Payment = () => {
                                 <form onSubmit={handelSubmit} id="collapseCC" className="accordion-collapse collapse show" data-bs-parent="#accordionPayment" style={{}}>
                                     <div className="accordion-body">
                                         <div className="mb-3">
-                                            <label className="form-label" style={{ fontSize: "15px" }} >Card Number</label>
+                                            <label className="form-label font-size-15 font-sm-13" >Card Number</label>
                                             <input type="text" className="form-control" name='cardNumber' onChange={handelChange} placeholder />
                                         </div>
                                         <div className="row">
                                             <div className="col-lg-6">
                                                 <div className="mb-3">
-                                                    <label className="form-label" style={{ fontSize: "15px" }}>Name on card</label>
+                                                    <label className="form-label font-size-15 font-sm-13" >Name on card</label>
                                                     <input type="text" className="form-control" name='name' onChange={handelChange} placeholder />
                                                 </div>
                                             </div>
                                             <div className="col-lg-3">
                                                 <div className="mb-3">
-                                                    <label className="form-label" style={{ fontSize: "15px" }}>Expiry date</label>
+                                                    <label className="form-label font-size-15 font-sm-13" >Expiry date</label>
                                                     <input type="date" className="form-control" name='expire' onChange={handelChange} placeholder="MM/YY" />
                                                 </div>
                                             </div>
                                             <div className="col-lg-3">
                                                 <div className="mb-3">
-                                                    <label className="form-label" style={{ fontSize: "15px" }}>CVV Code</label>
+                                                    <label className="form-label font-size-15 font-sm-13" >CVV Code</label>
                                                     <input type="password" className="form-control" name='cvv' onChange={handelChange} />
                                                 </div>
                                             </div>
@@ -121,7 +121,7 @@ const Payment = () => {
                                 <h2 className="h5 px-4 py-3 accordion-header d-flex justify-content-between align-items-center">
                                     <div className="form-check w-100 collapsed" data-bs-toggle="collapse" data-bs-target="#collapsePP" aria-expanded="false">
                                         <input className="form-check-input" type="radio" name="payment" id="payment2" />
-                                        <label className="form-check-label h6 pt-1" htmlFor="payment2">
+                                        <label className="form-check-label font-size-15 fnt-sm-14 font-sm-13 pt-1" htmlFor="payment2">
                                             PayPal
                                         </label>
                                     </div>
@@ -140,7 +140,7 @@ const Payment = () => {
                                 <div id="collapsePP" className="accordion-collapse collapse" data-bs-parent="#accordionPayment" style={{}}>
                                     <div className="accordion-body">
                                         <div className="px-2 col-lg-6 mb-3">
-                                            <label className="form-label" style={{ fontSize: "15px" }} >Email address</label>
+                                            <label className="form-label font-size-15 font-sm-13">Email address</label>
                                             <input type="email" className="form-control" name="email" onChange={handelChange} />
                                         </div>
                                     </div>
