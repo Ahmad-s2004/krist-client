@@ -65,7 +65,7 @@ const Payment = () => {
     return (
         <div>
             <Navbar />
-            <div className="container mt-4">
+            <div className="container mt-4 font-poppins">
                 <h1 className="h5">Payment</h1>
                 <div className='text-center' style={{color:"red"}}>{error}</div>
                 <div className="row">

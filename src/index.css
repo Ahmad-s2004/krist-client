@@ -38,6 +38,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.font-poppins{
+  font-family: "Poppins", sans-serif!important;
+}
 .card{
   border: none;
   overflow: hidden;
