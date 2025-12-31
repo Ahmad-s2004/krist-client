@@ -11,11 +11,11 @@ const Footer = () => {
             <div className="col-lg-3 col-md-6">
               {/* Contact Info*/}
               <section className="widget widget-light-skin">
-                <h3 className="widget-title">Get In Touch With Us</h3>
-                <p className="text-white phoneNo">Phone: 00 33 169 7720</p>
+                <h3 className="widget-title text-white">Get In Touch With Us</h3>
+                <p className="text-white phoneNo fw-light">Phone: 00 33 169 7720</p>
                 <ul className="list-unstyled text-sm text-white">
-                  <li><span className="opacity-50">Monday-Friday:</span>9.00 am - 8.00 pm</li>
-                  <li><span className="opacity-50">Saturday:</span>10.00 am - 6.00 pm</li>
+                  <li><span className="opacity-50 fw-light">Monday-Friday: </span>9.00 am - 8.00 pm</li>
+                  <li><span className="opacity-50 fw-light">Saturday: </span>10.00 am - 6.00 pm</li>
                 </ul>
                 <p><Link className="navi-link-light linkSupport" href="#">support@unishop.com</Link></p><Link className="social-button shape-circle sb-facebook sb-light-skin" href="#"><i className="socicon-facebook" /></Link><Link className="social-button shape-circle sb-twitter sb-light-skin" href="#"><i className="socicon-twitter" /></Link><Link className="social-button shape-circle sb-instagram sb-light-skin" href="#"><i className="socicon-instagram" /></Link><Link className="social-button shape-circle sb-google-plus sb-light-skin" href="#"><i className="socicon-googleplus" /></Link>
               </section>
@@ -23,7 +23,7 @@ const Footer = () => {
             <div className="col-lg-3 col-md-6">
               {/* Mobile App Buttons*/}
               <section className="widget widget-light-skin">
-                <h3 className="widget-title">Our Mobile App</h3>
+                <h3 className="widget-title text-white">Our Mobile App</h3>
                 <Link className="market-button apple-button mb-light-skin" href="#">
                   <span className="mb-subtitle">Download on the</span>
                   <span className="mb-title">App Store</span>
@@ -41,12 +41,12 @@ const Footer = () => {
             <div className="col-lg-3 col-md-6">
               {/* About Us*/}
               <section className="widget widget-links widget-light-skin">
-                <h3 className="widget-title">Services</h3>
+                <h3 className="widget-title text-white">Services</h3>
                 <ul className='list-unstyled'>
-                  <li><Link to="">About US</Link></li>
-                  <li><Link to="">Contact</Link></li>
-                  <li><Link to="">Terms & Condition</Link></li>
-                  <li><Link to="">Privacy Policy</Link></li>
+                  <li className='fw-light'><Link to="">About US</Link></li>
+                  <li className='fw-light'><Link to="">Contact</Link></li>
+                  <li className='fw-light'><Link to="">Terms & Condition</Link></li>
+                  <li className='fw-light'><Link to="">Privacy Policy</Link></li>
                   {/* <li><Link href="#">Our Blog</Link></li> */}
                 </ul>
               </section>
@@ -54,13 +54,13 @@ const Footer = () => {
             <div className="col-lg-3 col-md-6">
               {/* Account / Shipping Info*/}
               <section className="widget widget-links widget-light-skin">
-                <h3 className="widget-title">Information</h3>
+                <h3 className="widget-title text-white">Information</h3>
                 <ul className='list-unstyled'>
-                  <li><Link to="/dashboard">My Account</Link></li>
-                  <li><Link to="/signin">Login</Link></li>
-                  <li><Link to="/cart">My Cart</Link></li>
-                  <li><Link to="">My Wishlist</Link></li>
-                  <li><Link to="/shipping">Checkout</Link></li>
+                  <li className='fw-light' style={{letterSpacing:"0.4px"}}><Link to="/dashboard">My Account</Link></li>
+                  <li className='fw-light' style={{letterSpacing:"0.4px"}}><Link to="/signin">Login</Link></li>
+                  <li className='fw-light' style={{letterSpacing:"0.4px"}}><Link to="/cart">My Cart</Link></li>
+                  <li className='fw-light' style={{letterSpacing:"0.4px"}}><Link to="">My Wishlist</Link></li>
+                  <li className='fw-light' style={{letterSpacing:"0.4px"}}><Link to="/shipping">Checkout</Link></li>
                 </ul>
               </section>
             </div>
@@ -76,8 +76,8 @@ const Footer = () => {
                   <div className="input-group input-light">
                     <input className="form-control rounded" type="email" name="EMAIL" width={100} placeholder="Your e-mail" /><span className="input-group-addon"><i className="icon-mail" /></span>
                   </div>
-                  <button className="btn btn-primary mt-2 linkSupport" type="submit">Suscbribe</button>
-                </div><span className="form-text text-sm text-white opacity-50 linkSupport">Subscribe to our Newsletter to receive early discount offers, latest news, sales and promo information.</span>
+                  <button className="btn btn-outline-light font-14 fw-semibold mt-2 linkSupport" type="submit">Suscbribe</button>
+                </div><span className="form-text text-sm text-white opacity-50 linkSupport">Subscribe to our Newsletter to receive early information.</span>
               </form>
             </div>
           </div>
