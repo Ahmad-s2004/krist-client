@@ -18,7 +18,6 @@ const Home = () => {
     let res = await fetch(`${API_URL}/product/getKids?limit=6`)
     res = await res.json()
     setProduct(res)
-    console.log(res)
     setLoading(true)
   }
   useEffect(() => {
@@ -79,8 +78,8 @@ const Home = () => {
                     <div className="col-lg-4 col-md-4 col-6">
                       <div className="card" >
                         <div className='card-img-container'>
-                          <img src={`${API_URL}/${x.gallery[0].img1}`} className="card-img-top primary" alt="Primary" />
-                          <img src={`${API_URL}/${x.gallery[0].img2}`} className="card-img-top secondary" alt="Secondary" />
+                          <img src={`http://localhost:5050/${x.gallery[0].img1}`} className="card-img-top primary" alt="Primary" />
+                          <img src={`http://localhost:5050/${x.gallery[0].img2}`} className="card-img-top secondary" alt="Secondary" />
                           <Link className="button" to={`/get${x.category}/${x._id}`}>Quick View</Link>
                         </div>
                         <div className="card-body">

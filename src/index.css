@@ -44,7 +44,7 @@ code {
   font-family: "Poppins", sans-serif!important;
 }
 .card{
-  border: none;
+  border: 1.4px solid rgb(189, 189, 189)!important;
   overflow: hidden;
 }
 .card>img{
@@ -54,12 +54,14 @@ code {
   position: relative;
   bottom: 60px;
   margin: 0px auto;
-  font-size: 13px;
-  border-radius: none!important;
+  font-size: 12px; 
+  font-weight: 500;
+  letter-spacing: 0.7px;
+  border-radius: 4px!important;
   border: none;
-  padding: 7px 40px;
-  background: white;
-  color: black;
+  padding: 4px 25px;
+  background: rgb(42, 42, 42);
+  color: rgb(239, 239, 239);
   transition: 0.6s ease;
   text-decoration: none;
 }
