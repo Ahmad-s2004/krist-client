@@ -104,23 +104,17 @@
   }
   
   .nav-menu {
-    display: none;
-    background-color: #f8f9fa;
-    width: 250px;
-    height: 100vh;
     position: fixed;
     top: 0;
-    left: -250px;
-    transition-delay: 1s;
-    transition: left 1.5s;
-    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
-    z-index: 999;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    background: #fff;
+    z-index: 9999;
+    transform: translateX(-100%);
   }
   
-  .nav-menu.active {
-    left: 0;
-    display: block;
-  }
+  
   
   .nav-menu-items {
     list-style: none;
