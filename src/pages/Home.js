@@ -15,7 +15,7 @@ const Home = () => {
   const [loading, setLoading] = useState(false)
 
   let fetchData = async () => {
-    let res = await fetch(`https://krist-server.vercel.app/product/getKids?limit=6`)
+    let res = await fetch(`${API_URL}/product/getKids?limit=6`)
     res = await res.json()
     setProduct(res)
     console.log(res)
@@ -37,8 +37,8 @@ const Home = () => {
           <img src="/media/banner.png" style={{ width: "100%" }} alt="" />
         </div>
         <div className='shopByCategory mx-3 '>
-          <div className="d-none d-md-block h3 text-center mt-5">Shop by Categories {API_URL}</div>
-          <div className="d-block d-md-none h6 text-center mt-5">Shop by Categories {API_URL}</div>
+          <div className="d-none d-md-block h3 text-center mt-5">Shop by Categories</div>
+          <div className="d-block d-md-none h6 text-center mt-5">Shop by Categories</div>
           <div className="conatiner mt-3">
             <div className="row">
               <div className="col-lg-4 col-md-4 col-6 text-center">
