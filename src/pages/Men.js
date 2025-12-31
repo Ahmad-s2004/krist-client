@@ -8,6 +8,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import Loader from '../components/Loader';
 
 const Men = () => {
+  const API_URL = process.env.REACT_APP_API_URL;
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
   const [sidebar, setSidebar] = useState(false);
@@ -16,7 +17,7 @@ const Men = () => {
   const showSidebar = () => setSidebar(!sidebar);
 
   const fetchData = async () => {
-    const res = await fetch('https://krist-server.vercel.app/product/getMen');
+    const res = await fetch(`${API_URL}/product/getMen`);
     const data = await res.json();
     setProduct(data);
     setLoading(true);
@@ -27,7 +28,7 @@ const Men = () => {
   }, []);
 
   const fetchFilteredProducts = async (searchString) => {
-    const res = await fetch(`https://krist-server.vercel.app/product/getMenProducts?search=${searchString}`);
+    const res = await fetch(`${API_URL}/product/getMenProducts?search=${searchString}`);
     const data = await res.json();
     setProduct(data);
   };
@@ -148,8 +149,8 @@ const Men = () => {
                       <div className="card">
                         <div className="card-img-container">
                           <div className="sale my-auto">{Number(x.salePercent)}%</div>
-                          <img src={`https://krist-server.vercel.app/${x.gallery[0].img1}`} className="card-img-top primary" alt="Primary" />
-                          <img src={`https://krist-server.vercel.app/${x.gallery[0].img2}`} className="card-img-top secondary" alt="Secondary" />
+                          <img src={`${API_URL}/${x.gallery[0].img1}`} className="card-img-top primary" alt="Primary" />
+                          <img src={`${API_URL}/${x.gallery[0].img2}`} className="card-img-top secondary" alt="Secondary" />
                           <Link className="button" to={`/getMen/${x._id}`}>Quick View</Link>
                         </div>
 

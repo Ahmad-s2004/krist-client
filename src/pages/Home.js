@@ -10,14 +10,15 @@ import Loader from '../components/Loader';
 
 
 const Home = () => {
-
+  const API_URL = process.env.REACT_APP_API_URL;
   const [product, setProduct] = useState([])
   const [loading, setLoading] = useState(false)
 
   let fetchData = async () => {
-    let res = await fetch('https://krist-server.vercel.app/product/getKids?limit=6')
+    let res = await fetch(`${API_URL}/product/getKids?limit=6`)
     res = await res.json()
     setProduct(res)
+    console.log(res)
     setLoading(true)
   }
   useEffect(() => {
@@ -72,14 +73,14 @@ const Home = () => {
           <div className="d-block d-md-none h6 text-center mb-4 mt-5">Our Bestsellers</div>
           <div className="container-fluid px-3">
             <div className="row">
-              {
+              { Array.isArray(product) &&
                 product.map((x) => {
                   return (
                     <div className="col-lg-4 col-md-4 col-6">
                       <div className="card" >
                         <div className='card-img-container'>
-                          <img src={`https://krist-server.vercel.app/${x.gallery[0].img1}`} className="card-img-top primary" alt="Primary" />
-                          <img src={`https://krist-server.vercel.app/${x.gallery[0].img2}`} className="card-img-top secondary" alt="Secondary" />
+                          <img src={`${API_URL}/${x.gallery[0].img1}`} className="card-img-top primary" alt="Primary" />
+                          <img src={`${API_URL}/${x.gallery[0].img2}`} className="card-img-top secondary" alt="Secondary" />
                           <Link className="button" to={`/get${x.category}/${x._id}`}>Quick View</Link>
                         </div>
                         <div className="card-body">

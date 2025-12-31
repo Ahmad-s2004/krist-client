@@ -49,14 +49,14 @@ const ProductCart = () => {
         <>
             <Navbar />
             <div className="shoppingcart text-center h4 my-5 py-2 bg-light fw-semibold d-none d-md-block">Shopping Cart</div>
-            <div className="shoppingcart text-center h6 my-3 py-2 bg-light fw-semibold d-block d-md-none">Shopping Cart</div>
+            <div className="shoppingcart text-center my-3 py-2 bg-light fw-semibold d-block d-md-none" style={{fontSize:"19px"}}>Shopping Cart</div>
             <div>
                 <div className="container">
                     <div className="row d-flex align-items-center mt-3">
                         {Array.isArray(data) && data.map((x) => (
                             <React.Fragment key={x._id}>
                                 <div className="col-lg-5 col-12 d-flex cartPart my-4">
-                                    <img src={`https://krist-server.vercel.app/${x.gallery[0].img1}`} style={{ width: "100px", height: "100px" }} alt="" />
+                                    <img src={`http://localhost:5050/${x.gallery[0].img1}`} style={{ width: "100px", height: "100px" }} alt="" />
                                     <span className='ps-2 pt-2 cartDetail'>
                                         <p className='py-1'>{x.title}</p>
                                         <p className='py-1 greyColor'>Color : {x.color[0]}</p>

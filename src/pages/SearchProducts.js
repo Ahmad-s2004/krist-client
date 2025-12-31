@@ -5,7 +5,7 @@ import { Link, useParams } from 'react-router-dom'
 import Loader from '../components/Loader'
 
 const SearchProducts = () => {
-
+  const API_URL = process.env.REACT_APP_API_URL;
   const [product, setProduct] = useState([])
   const [loading, setLoading] = useState(true)
   
@@ -14,7 +14,7 @@ const SearchProducts = () => {
  
   useEffect(() => {
     let fetchData = async () => {
-      let res = await fetch(`https://krist-server.vercel.app/product/getProducts?search=${search}`)
+      let res = await fetch(`${API_URL}/product/getProducts?search=${search}`)
       res = await res.json()
       setProduct(res)
       setLoading(false)
@@ -35,8 +35,8 @@ const SearchProducts = () => {
                   <div className="card">
                     <div className="card-img-container">
                       <div className="sale my-auto">{Number(x.salePercent)}%</div>
-                      <img src={`https://krist-server.vercel.app//${x.gallery[0].img1}`} className="card-img-top primary" alt="Primary" />
-                      <img src={`https://krist-server.vercel.app//${x.gallery[0].img2}`} className="card-img-top secondary" alt="Secondary" />
+                      <img src={`${API_URL}/${x.gallery[0].img1}`} className="card-img-top primary" alt="Primary" />
+                      <img src={`${API_URL}/${x.gallery[0].img2}`} className="card-img-top secondary" alt="Secondary" />
                       <Link className="button" to={`/get${x.category}/${x._id}`}>Quick View</Link>
                     </div>
 

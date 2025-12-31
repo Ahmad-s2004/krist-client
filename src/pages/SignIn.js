@@ -3,7 +3,7 @@ import axios from "axios"
 import { Link, useNavigate } from 'react-router-dom'
 
 const SignIn = () => {
-
+  const API_URL = process.env.REACT_APP_API_URL;
   let history = useNavigate()
   const [errorMessage, setErrorMessage] = useState("")
   const [inputs, setInputs] = useState({
@@ -27,7 +27,7 @@ const setCookie = (name, value) => {
 
   const submit = async() =>{
     try {
-      let res = await axios.post("https://krist-server.vercel.app/post/signin", {
+      let res = await axios.post(`${API_URL}/post/signin`, {
       email: inputs.email,
       password: inputs.password
     })

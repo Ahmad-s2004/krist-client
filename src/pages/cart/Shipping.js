@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux'
 
 
 const Shipping = () => {
-
+  const API_URL = process.env.REACT_APP_API_URL;
   const totalAmmount = useSelector(state => state.product.totalAmmount);
   const [response, setResponse] = useState('')
   const [inputs, setInputs] = useState({
@@ -28,7 +28,7 @@ const Shipping = () => {
     try {
 
       let token = localStorage.getItem('token')
-      const res = await axios.post('https://krist-server.vercel.app/post/getAddress', {
+      const res = await axios.post(`${API_URL}/post/getAddress`, {
         name: inputs.name,
         email: inputs.email,
         phone: inputs.phone,
@@ -58,7 +58,7 @@ const Shipping = () => {
     let token = localStorage.getItem('token');
     if(token){
       try {
-        let res = await fetch('https://krist-server.vercel.app/post/getUserAddress', {
+        let res = await fetch(`${API_URL}/post/getUserAddress`, {
           headers: {
             Authorization: token,
           },
@@ -97,6 +97,8 @@ const Shipping = () => {
   return (
     <div>
       <Navbar />
+      <div className="shoppingcart text-center h5 my-5 py-2 bg-light fw-semibold d-none d-md-block">Shipping</div>
+            <div className="shoppingcart text-center my-3 py-2 bg-light fw-semibold d-block d-md-none" style={{fontSize:"19px"}}>Shipping</div>
       <div className='mt-4'>
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
         <div className="container">
@@ -157,7 +159,7 @@ const Shipping = () => {
                                       <input type="text" className="form-control" id="zip-code" name='postal' onChange={handelChange} placeholder="Enter Postal code" />
                                     </div>
                                   </div>
-                                  <button type="submit" className="btn btn-dark ms-3 mt-2" style={{ width: "100px" }}>
+                                  <button type="submit" className="btn btn-dark font-14 ms-3 mt-2 py-1" style={{ width: "100px" }}>
                                     Submit
                                   </button>
                                 </div>
@@ -171,7 +173,7 @@ const Shipping = () => {
                     <li className="checkout-itm">
                       <div className="feed-item-list">
                         <div>
-                          <h5 className="font-size-16 mb-1">Shipping Info</h5>
+                          <h5 className="font-15 mb-1">Shipping Info</h5>
                           <p className="text-muted text-truncate mb-4">Select a delivery address</p>
                           <div className="mb-3">
                             <div className="row">
@@ -216,12 +218,12 @@ const Shipping = () => {
               <div className="row my-4">
                 <div className="col">
                   <Link to='/' href="ecommerce-products.html" className="btn btn-link text-muted">
-                    <i className="mdi mdi-arrow-left me-1" /> Continue Shopping </Link>
+                    <i className="mdi mdi-arrow-left me-1 font-14" /> Continue Shopping </Link>
                 </div> {/* end col */}
                 <div className="col">
                   <div className="text-end mt-2 mt-sm-0">
-                    <Link to="/payment" className="btn btn-dark">
-                      <i className="mdi mdi-cart-outline fw-normal me-1" /> Procced </Link>
+                    <Link to="/payment" className="btn btn-dark font-14 mt-2">
+                      <i className="mdi mdi-cart-outline fw-normal me-1 font-14" /> Procced </Link>
                   </div>
                 </div> {/* end col */}
               </div> {/* end row*/}
@@ -230,7 +232,7 @@ const Shipping = () => {
               <div className="card checkout-order-summary">
                 <div className="card-body">
                   <div className="p-3 bg-light mb-3 rounded-2">
-                    <span className="font-size-16 mb-0 fw-medium">SubTotal </span><span className="float-end ms-2">Rs. {totalAmmount}</span>
+                    <span className="font-15 mb-0 fw-medium">SubTotal </span><span className="float-end ms-2 font-15">Rs. {totalAmmount}</span>
                   </div>
                   <div className="table-responsive">
                     <table className="table table-centered mb-0 table-nowrap">
@@ -247,17 +249,17 @@ const Shipping = () => {
                         </tr> */}
                         <tr>
                           <td colSpan={2}>
-                            <h6 className="font-size-14 fw-normal m-0">Shipping Charge :</h6>
+                            <h6 className=" font-15 fw-normal m-0">Shipping Charge :</h6>
                           </td>
-                          <td>
+                          <td className=' font-15'>
                             Rs. 400
                           </td>
                         </tr>
                         <tr className="bg-light">
                           <td colSpan={2}>
-                            <h6 className="font-size-14 fw-normal m-0">Total:</h6>
+                            <h6 className="font-15 fw-normal m-0">Total:</h6>
                           </td>
-                          <td>
+                          <td className='font-15'>
                             Rs. {totalAmmount + 400}
                           </td>
                         </tr>

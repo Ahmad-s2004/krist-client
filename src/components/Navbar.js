@@ -8,108 +8,111 @@ import { useSelector } from 'react-redux';
 const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
   const [searchActive, setSearchActive] = useState(false);
-  let data = useSelector(x=>x.product.cart)
+  let data = useSelector(x => x.product.cart)
 
 
   const [search, setSearch] = useState('');
 
   const getValue = (e) => {
-      setSearch(e.target.value);
-
-      
+    setSearch(e.target.value);
   };
 
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
-        navigateToSearch();
+      navigateToSearch();
     }
-};
+  };
 
-const navigateToSearch = () => {
+  const navigateToSearch = () => {
     if (search.trim() !== '') {
-        window.location.href = `/getProducts/${search}`;
+      window.location.href = `/getProducts/${search}`;
     }
-};
-const showSidebar = () => {
+  };
+  const showSidebar = () => {
     setSidebar(!sidebar);
     setSearchActive(false);
-  }; 
+  };
 
-const toggleSearch = () => {
+  const toggleSearch = () => {
     setSearchActive(!searchActive);
     setSidebar(false);
   };
 
-  
+
 
   return (
     <>
-      <nav className="navbar">
-        <div className="navbar-left">
+      <nav className="navbar navbar-left d-flex align-items-center position-relative">
+        <div className="d-flex align-items-center gap-3">
           <FaBars className="menu-bars" onClick={showSidebar} />
-          <div className="navbar-logo">
-            <Link to="/">Krist </Link>
-          </div>
+          <Link to="/" className="navbar-brand fw-semibold fs-3 mb-0">Krist</Link>
         </div>
-        <ul className="navbar-menu z-3">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/men">Men</Link></li>
-          <li><Link to="/women">Women</Link></li>
-          <li><Link to="/kids">Kids</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
-        </ul>
-        <div className="navbar-icons ">
-          <span><FaSearch className="icon" onClick={toggleSearch} /></span>
-          <span className='d-none d-sm-block'><FaHeart className="icon " /></span>
-          <span className=' d-block d-sm-none'>
-            {/* <Link to="/dashboard"><FaUser className="icon" /></Link> */}
-            {
-              localStorage.getItem('token')?
-              <Link to="/dashboard"><FaUser className="icon" /></Link>
-              :
-              <Link to="/signin"><FaUser className="icon" /></Link>
-            }
-          </span>
-          <span><Link to="/cart">
+
+        <div className='d-none d-sm-block'>
+          <ul className="navbar-nav navbar-icons flex-row gap-4 position-absolute top-50 start-50 translate-middle">
+            <li className="nav-item fw-medium">
+              <Link className="nav-link" to="/">Home</Link>
+            </li>
+            <li className="nav-item fw-medium">
+              <Link className="nav-link" to="/men">Men</Link>
+            </li>
+            <li className="nav-item fw-medium">
+              <Link className="nav-link" to="/women">Women</Link>
+            </li>
+            <li className="nav-item fw-medium">
+              <Link className="nav-link" to="/kids">Kids</Link>
+            </li>
+            <li className="nav-item fw-medium">
+              <Link className="nav-link" to="/contact">Contact</Link>
+            </li>
+          </ul>
+        </div>
+
+        <div className="d-flex align-items-center gap-3 ms-auto">
+          <FaSearch className="icon"  onClick={toggleSearch}/>
+          <FaHeart className="icon d-none d-sm-block" />
+          <Link to="/cart">
             <Badge badgeContent={data.length} color="primary">
-                <FaShoppingCart className="icon" />
+              <FaShoppingCart className="icon" />
             </Badge>
-          </Link></span>
-          
-          <div>
-            {
-              localStorage.getItem('token')?
-              <Link className=" btn btn-dark d-none d-md-block px-4 py-1 rounded-3" to='/dashboard'>Account</Link>
-              :
-              <Link className=" btn btn-dark d-none d-md-block px-4 py-1 rounded-3" to='/signin'>Login</Link>
-            }
-          </div>
+          </Link>
+
+          {localStorage.getItem("token") ? (
+            <Link to="/dashboard" className="btn btn-dark d-none d-md-block">
+              Account
+            </Link>
+          ) : (
+            <Link to="/signin" className="btn btn-dark d-none d-md-block">
+              Login
+            </Link>
+          )}
         </div>
       </nav>
 
-      
-      <div className={`search-field ${searchActive ? 'active' : ''}`}>
-      <input
-                type="text"
-                placeholder="Search..."
-                value={search}
-                onChange={getValue}
-                onKeyPress={handleKeyPress}
-            />
-            <span>
 
-              {
-                search === '' || ""? <Link className="search-link"><FaSearch className="icon iconSearch ps-1 " /></Link> : <Link to={`/getProducts/${search}`} className="search-link"><FaSearch className="icon iconSearch ps-1" onClick={navigateToSearch} /></Link>
-              }
-                
-              </span>
-            
+
+      <div className={`search-field ${searchActive ? 'active' : ''}`}>
+        <input
+          type="text"
+          placeholder="Search..."
+          value={search}
+          onChange={getValue}
+          onKeyPress={handleKeyPress}
+        />
+        <span>
+
+          {
+            search === '' || "" ? <Link className="search-link"><FaSearch className="icon iconSearch ps-1 " /></Link> : <Link to={`/getProducts/${search}`} className="search-link"><FaSearch className="icon iconSearch ps-1" onClick={navigateToSearch} /></Link>
+          }
+
+        </span>
+
       </div>
 
       <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
         <ul className="nav-menu-items" onClick={showSidebar}>
           <li className="navbar-toggle">
-            <FaTimes className="menu-bars-close z-3" style={{marginLeft:"85%"}} onClick={showSidebar} />
+            <FaTimes className="menu-bars-close z-3" style={{ marginLeft: "85%" }} onClick={showSidebar} />
           </li>
           <li className='hoverEffect'><Link className='ms-3' to="/">Home</Link></li>
           <li className='hoverEffect'><Link className='ms-3' to="/men">Men</Link></li>

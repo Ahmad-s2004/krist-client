@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 const Dashboard = () => {
+  const API_URL = process.env.REACT_APP_API_URL;
   const [value, setValue] = useState('dashboard');
   const [address, setAddress] = useState([]);
   const [loading, setLoading] = useState(true)
@@ -20,7 +21,7 @@ const Dashboard = () => {
   const fetchUserData = async () => {
     try {
       let token = localStorage.getItem('token');
-      let res = await fetch('https://krist-server.vercel.app/post/getUser', {
+      let res = await fetch(`${API_URL}/post/getUser`, {
         headers: {
           Authorization: token,
         },
@@ -41,7 +42,7 @@ const Dashboard = () => {
   const fetchData = async () => {
     try {
       let token = localStorage.getItem('token');
-      let res = await fetch('https://krist-server.vercel.app/post/getUserAddress', {
+      let res = await fetch(`${API_URL}/post/getUserAddress`, {
         headers: {
           Authorization: token,
         },
@@ -56,7 +57,7 @@ const Dashboard = () => {
 
   const removeAddress = async (id) => {
     try {
-      let res = await fetch(`https://krist-server.vercel.app/post/removeAddress/${id}`, {
+      let res = await fetch(`${API_URL}/post/removeAddress/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: localStorage.getItem('token'),

@@ -65,8 +65,10 @@ const Payment = () => {
     return (
         <div>
             <Navbar />
+            <div className="shoppingcart text-center h5 my-5 py-2 bg-light fw-semibold d-none d-md-block">Payment</div>
+            <div className="shoppingcart text-center my-3 py-2 bg-light fw-semibold d-block d-md-none" style={{fontSize:"19px"}}>Payment</div>
             <div className="container mt-4">
-                <h1 className="h5">Payment</h1>
+                {/* <h1 className="h5">Payment</h1> */}
                 <div className='text-center' style={{color:"red"}}>{error}</div>
                 <div className="row">
                     <div className="col-lg-9">

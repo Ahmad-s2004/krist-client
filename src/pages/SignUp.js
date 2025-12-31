@@ -3,8 +3,8 @@ import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
-    let history = useNavigate()
-
+  const API_URL = process.env.REACT_APP_API_URL;
+  let history = useNavigate()
   const [errorMessage, setErrorMessage] = useState("")
 
 
@@ -25,7 +25,7 @@ const SignUp = () => {
   
   const sendRequest = async () => {
     try {
-      const res = await axios.post('https://krist-server.vercel.app/post/signup', {
+      const res = await axios.post(`${API_URL}/post/signup`, {
         name: inputs.name,
         email: inputs.email,
         password: inputs.password,

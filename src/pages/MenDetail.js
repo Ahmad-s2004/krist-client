@@ -11,7 +11,7 @@ import Loader from '../components/Loader';
 
 
 const MenDetail = () => {
-
+    const API_URL = process.env.REACT_APP_API_URL;
     const { _id } = useParams()
     const [product, setProduct] = useState({})
     const [data, setData] = useState("small")
@@ -20,7 +20,7 @@ const MenDetail = () => {
 
 
     let fetchData = async () => {
-        let res = await fetch(`https://krist-server.vercel.app/product/getMen/${_id}`)
+        let res = await fetch(`${API_URL}/product/getMen/${_id}`)
         res = await res.json()
         setProduct(res)
         setLoading(true)
@@ -56,10 +56,10 @@ const MenDetail = () => {
                 <div className="col-lg-6 col-md-6 col-12 ps-3">
                     <Slider {...settings}>
                         <div>
-                            {product.gallery ? <img src={`https://krist-server.vercel.app/${product.gallery[0].img1}`} alt="" /> : null}
+                            {product.gallery ? <img src={`${API_URL}/${product.gallery[0].img1}`} alt="" /> : null}
                         </div>
                         <div>
-                            {product.gallery ? <img src={`https://krist-server.vercel.app/${product.gallery[0].img2}`} alt="" /> : null}
+                            {product.gallery ? <img src={`${API_URL}/${product.gallery[0].img2}`} alt="" /> : null}
 
                         </div>
                     </Slider>
