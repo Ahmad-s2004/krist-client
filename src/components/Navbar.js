@@ -31,7 +31,6 @@ const Navbar = () => {
     });
     setSidebar(!sidebar);
 
-    // close search if open
     if (searchActive) toggleSearch();
   };
 
@@ -58,7 +57,6 @@ const Navbar = () => {
   
     setSearchActive(!searchActive);
   
-    // sidebar open ho to band karo
     if (sidebar) {
       gsap.to("#navMenu", { x: "-100%", duration: 0.6 });
       setSidebar(false);
@@ -108,7 +106,6 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* SEARCH */}
       <div style={{zIndex:0}} id="search-field" className="search-field">
         <input
           type="text"
@@ -120,7 +117,6 @@ const Navbar = () => {
         />
       </div>
 
-      {/* SIDEBAR */}
       <nav id="navMenu" className="nav-menu">
         <ul className="nav-menu-items">
           <li className="navbar-toggle">
