@@ -106,11 +106,11 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <div style={{zIndex:0}} id="search-field" className="search-field">
+      <div style={{zIndex:0}} id="search-field" className="search-field mt-1">
         <input
           type="text"
           placeholder="Search..."
-          className='w-100'
+          className='w-100 font-12'
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           onKeyDown={handleKeyPress}
