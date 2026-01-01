@@ -6,7 +6,6 @@ import Footer from '../../components/Footer';
 import { addToCart, removeFromCart, removeSingleItem, TotalPrice } from '../../redux/sliceReducer';
 
 const ProductCart = () => {
-    const API_URL = process.env.REACT_APP_API_URL;
     const dispatch = useDispatch();
     const data = useSelector((state) => state.product.cart);
 
@@ -57,7 +56,7 @@ const ProductCart = () => {
                         {Array.isArray(data) && data.map((x) => (
                             <React.Fragment key={x._id}>
                                 <div className="col-lg-5 col-12 d-flex cartPart my-4">
-                                    <img src={`${API_URL}/${x.gallery[0].img1}`} style={{ width: "100px", height: "100px" }} alt="" />
+                                    <img src={`http://localhost:5050/${x.gallery[0].img1}`} style={{ width: "100px", height: "100px" }} alt="" />
                                     <span className='ps-2 pt-2 cartDetail'>
                                         <p className='py-1'>{x.title}</p>
                                         <p className='py-1 greyColor'>Color : {x.color[0]}</p>
@@ -99,8 +98,8 @@ const ProductCart = () => {
                         <div className='d-block d-sm-none h6 fw-semibold'>SUBTOTAL : Rs. {formatPrice(totalBill)}</div>
                         <p style={{ fontSize: "0.8rem" }} className='d-none d-sm-block'>Tax included and shipping calculated at checkout</p>
                         <p style={{ fontSize: "0.65rem" }} className='d-block d-sm-none'>Tax included and shipping calculated at checkout</p>
-                        <Link to='/shipping'><button className='btn btn-dark rounded-5 py-2 px-5 mx-auto d-none d-sm-block' onClick={dispatchTotal}>CheckOut</button></Link>
-                        <Link to='/shipping'><button className='btn btn-dark rounded-5 py-2 px-4 mx-auto d-block d-sm-none' onClick={dispatchTotal} style={{ fontSize: "0.8rem" }}>CheckOut</button></Link>
+                        <Link to='/shipping'><button className='btn btn-dark rounded-2 font-14 py-2 px-5 mx-auto d-none d-sm-block' onClick={dispatchTotal}>CheckOut</button></Link>
+                        <Link to='/shipping'><button className='btn btn-dark rounded-2 font-14 py-2 px-4 mx-auto d-block d-sm-none' onClick={dispatchTotal}>CheckOut</button></Link>
                     </div>
                 </div>
             </div>

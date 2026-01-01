@@ -111,7 +111,7 @@ const MenDetail = () => {
                         }
                     </div>
 
-                    <button className="btn btn-dark mt-5 px-3 py-2 fw-semibold" onClick={()=>dispatchData(product, data)}>Add to Cart</button>
+                    <button className="btn btn-dark mt-5 px-3 py-2 fw-semibold font-14" onClick={()=>dispatchData(product, data)}>Add to Cart</button>
 
                 </div>
             </div>

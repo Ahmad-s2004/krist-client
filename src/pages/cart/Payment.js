@@ -77,7 +77,7 @@ const Payment = () => {
                                 <h2 className="h5 px-4 py-3 accordion-header d-flex justify-content-between align-items-center">
                                     <div className="form-check w-100 collapsed" data-bs-toggle="collapse" data-bs-target="#collapseCC" aria-expanded="false">
                                         <input className="form-check-input" type="radio" name="payment" id="payment1" />
-                                        <label className="form-check-label h6 pt-1" htmlFor="payment1">
+                                        <label className="form-check-label font-16 pt-1" htmlFor="payment1">
                                             Credit Card
                                         </label>
                                     </div>
@@ -93,25 +93,25 @@ const Payment = () => {
                                 <form onSubmit={handelSubmit} id="collapseCC" className="accordion-collapse collapse show" data-bs-parent="#accordionPayment" style={{}}>
                                     <div className="accordion-body">
                                         <div className="mb-3">
-                                            <label className="form-label" style={{ fontSize: "15px" }} >Card Number</label>
+                                            <label className="form-label font-14">Card Number</label>
                                             <input type="text" className="form-control" name='cardNumber' onChange={handelChange} placeholder />
                                         </div>
                                         <div className="row">
                                             <div className="col-lg-6">
                                                 <div className="mb-3">
-                                                    <label className="form-label" style={{ fontSize: "15px" }}>Name on card</label>
+                                                    <label className="form-label font-14">Name on card</label>
                                                     <input type="text" className="form-control" name='name' onChange={handelChange} placeholder />
                                                 </div>
                                             </div>
                                             <div className="col-lg-3">
                                                 <div className="mb-3">
-                                                    <label className="form-label" style={{ fontSize: "15px" }}>Expiry date</label>
+                                                    <label className="form-label font-14">Expiry date</label>
                                                     <input type="date" className="form-control" name='expire' onChange={handelChange} placeholder="MM/YY" />
                                                 </div>
                                             </div>
                                             <div className="col-lg-3">
                                                 <div className="mb-3">
-                                                    <label className="form-label" style={{ fontSize: "15px" }}>CVV Code</label>
+                                                    <label className="form-label font-14">CVV Code</label>
                                                     <input type="password" className="form-control" name='cvv' onChange={handelChange} />
                                                 </div>
                                             </div>
@@ -123,7 +123,7 @@ const Payment = () => {
                                 <h2 className="h5 px-4 py-3 accordion-header d-flex justify-content-between align-items-center">
                                     <div className="form-check w-100 collapsed" data-bs-toggle="collapse" data-bs-target="#collapsePP" aria-expanded="false">
                                         <input className="form-check-input" type="radio" name="payment" id="payment2" />
-                                        <label className="form-check-label h6 pt-1" htmlFor="payment2">
+                                        <label className="form-check-label font-16 pt-1" htmlFor="payment2">
                                             PayPal
                                         </label>
                                     </div>
@@ -142,7 +142,7 @@ const Payment = () => {
                                 <div id="collapsePP" className="accordion-collapse collapse" data-bs-parent="#accordionPayment" style={{}}>
                                     <div className="accordion-body">
                                         <div className="px-2 col-lg-6 mb-3">
-                                            <label className="form-label" style={{ fontSize: "15px" }} >Email address</label>
+                                            <label className="form-label font-14">Email address</label>
                                             <input type="email" className="form-control" name="email" onChange={handelChange} />
                                         </div>
                                     </div>
@@ -154,7 +154,7 @@ const Payment = () => {
                     <div className="col-lg-3">
                         <div className="card position-sticky top-0">
                             <div className="p-3 bg-light bg-opacity-10">
-                                <h6 className="card-title mb-3">Order Summary</h6>
+                                <h6 className="card-title font-15 mb-3">Order Summary</h6>
                                 <div className="d-flex justify-content-between mb-1 small">
                                     <span>Subtotal</span> <span>Rs. {ammount}</span>
                                 </div>
@@ -167,13 +167,13 @@ const Payment = () => {
                                 </div>
                                 <div className="form-check mb-1 small">
                                     <input className="form-check-input" type="checkbox" defaultValue id="tnc" />
-                                    <label className="form-check-label" htmlFor="tnc">
+                                    <label className="form-check-label font-13" htmlFor="tnc">
                                         I agree to the <a href="#">terms and conditions</a>
                                     </label>
                                 </div>
                                 <div className="form-check mb-3 small">
                                     <input className="form-check-input" type="checkbox" defaultValue id="subscribe" />
-                                    <label className="form-check-label" htmlFor="subscribe">
+                                    <label className="form-check-label font-13" htmlFor="subscribe">
                                         Get emails about product updates and events. If you change your mind, you can unsubscribe at any time. <a href="#">Privacy Policy</a>
                                     </label>
                                 </div>
@@ -197,7 +197,7 @@ const Payment = () => {
 
 
 
-                                <button className="btn btn-dark w-100 mt-2" onClick={()=>handelSubmit()}>Place order</button>
+                                <button className="btn btn-dark font-14 w-100 mt-2" onClick={()=>handelSubmit()}>Place order</button>
                             </div>
                         </div>
                     </div>
