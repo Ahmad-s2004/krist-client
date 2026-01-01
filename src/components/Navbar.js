@@ -72,7 +72,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav style={{zIndex:1}} className="navbar d-flex align-items-center position-relative">
+      <nav style={{zIndex:999}} className="navbar d-flex align-items-center position-relative">
         <div className="d-flex align-items-center gap-3">
           <FaBars className="menu-bars" onClick={toggleSidebar} />
           <Link to="/" className="navbar-brand fw-semibold fs-3">Krist</Link>
@@ -106,7 +106,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <div style={{zIndex:0}} id="search-field" className="d-block d-md-none search-field mt-2">
+      <div style={{zIndex:998}} id="search-field" className="d-block d-md-none search-field mt-2">
         <input
           type="text"
           placeholder="Search..."
@@ -117,7 +117,7 @@ const Navbar = () => {
           onKeyDown={handleKeyPress}
         />
       </div>
-      <div style={{zIndex:0}} id="search-field" className="d-none d-md-block d-lg-none search-field mt-3">
+      <div style={{zIndex:998}} id="search-field" className="d-none d-md-block d-lg-none search-field mt-3">
         <input
           type="text"
           placeholder="Search..."
@@ -128,7 +128,7 @@ const Navbar = () => {
           onKeyDown={handleKeyPress}
         />
       </div>
-      <div style={{zIndex:0}} id="search-field" className="d-none d-lg-block search-field mt-1">
+      <div style={{zIndex:998}} id="search-field" className="d-none d-lg-block search-field mt-1">
         <input
           type="text"
           placeholder="Search..."
