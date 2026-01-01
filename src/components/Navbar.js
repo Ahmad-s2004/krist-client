@@ -146,11 +146,11 @@ const Navbar = () => {
           <Link to="/" className="navbar-brand fw-semibold fs-3">Krist</Link>
             <FaTimes className="menu-bars-close m-3" onClick={toggleSidebar} />
           </li>
-          <li className='ms-2 border-bottom mx-4'><Link to="/" onClick={toggleSidebar}>Home</Link></li>
-          <li className='ms-2 border-bottom mx-4'><Link to="/men" onClick={toggleSidebar}>Men</Link></li>
-          <li className='ms-2 border-bottom mx-4'><Link to="/women" onClick={toggleSidebar}>Women</Link></li>
-          <li className='ms-2 border-bottom mx-4'><Link to="/kids" onClick={toggleSidebar}>Kids</Link></li>
-          <li className='ms-2 border-bottom mx-4'><Link to="/contact" onClick={toggleSidebar}>Contact</Link></li>
+          <li className='ms-2 border-bottom mx-4 fs-4'><Link to="/" onClick={toggleSidebar}>Home</Link></li>
+          <li className='ms-2 border-bottom mx-4 fs-4'><Link to="/men" onClick={toggleSidebar}>Men</Link></li>
+          <li className='ms-2 border-bottom mx-4 fs-4'><Link to="/women" onClick={toggleSidebar}>Women</Link></li>
+          <li className='ms-2 border-bottom mx-4 fs-4'><Link to="/kids" onClick={toggleSidebar}>Kids</Link></li>
+          <li className='ms-2 border-bottom mx-4 fs-4'><Link to="/contact" onClick={toggleSidebar}>Contact</Link></li>
         </ul>
       </nav>
     </>
