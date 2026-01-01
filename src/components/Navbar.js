@@ -106,11 +106,34 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <div style={{zIndex:0}} id="search-field" className="search-field mt-1">
+      <div style={{zIndex:0}} id="search-field" className="d-block d-md-none search-field mt-2">
         <input
           type="text"
           placeholder="Search..."
           className='w-100 font-12'
+          style={{fontSize:"12px"}}
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          onKeyDown={handleKeyPress}
+        />
+      </div>
+      <div style={{zIndex:0}} id="search-field" className="d-none d-md-block d-lg-none search-field mt-3">
+        <input
+          type="text"
+          placeholder="Search..."
+          className='w-100 font-12'
+          style={{fontSize:"14px"}}
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          onKeyDown={handleKeyPress}
+        />
+      </div>
+      <div style={{zIndex:0}} id="search-field" className="d-none d-lg-block search-field mt-1">
+        <input
+          type="text"
+          placeholder="Search..."
+          className='w-100 font-12'
+          style={{fontSize:"14px"}}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           onKeyDown={handleKeyPress}
