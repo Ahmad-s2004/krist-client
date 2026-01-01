@@ -6,6 +6,7 @@ import Footer from '../../components/Footer';
 import { addToCart, removeFromCart, removeSingleItem, TotalPrice } from '../../redux/sliceReducer';
 
 const ProductCart = () => {
+    const API_URL = process.env.REACT_APP_API_URL
     const dispatch = useDispatch();
     const data = useSelector((state) => state.product.cart);
 
@@ -56,7 +57,7 @@ const ProductCart = () => {
                         {Array.isArray(data) && data.map((x) => (
                             <React.Fragment key={x._id}>
                                 <div className="col-lg-5 col-12 d-flex cartPart my-4">
-                                    <img src={`http://localhost:5050/${x.gallery[0].img1}`} style={{ width: "100px", height: "100px" }} alt="" />
+                                    <img src={`${API_URL}/${x.gallery[0].img1}`} style={{ width: "100px", height: "100px" }} alt="" />
                                     <span className='ps-2 pt-2 cartDetail'>
                                         <p className='py-1'>{x.title}</p>
                                         <p className='py-1 greyColor'>Color : {x.color[0]}</p>
