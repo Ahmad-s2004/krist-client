@@ -142,14 +142,15 @@ const Navbar = () => {
 
       <nav id="navMenu" className="nav-menu">
         <ul className="nav-menu-items">
-          <li className="navbar-toggle">
-            <FaTimes className="menu-bars-close" onClick={toggleSidebar} />
+          <li className="navbar-toggle d-flex justify-content-around mx-2">
+          <Link to="/" className="navbar-brand fw-semibold fs-3">Krist</Link>
+            <FaTimes className="menu-bars-close m-3" onClick={toggleSidebar} />
           </li>
-          <li><Link to="/" onClick={toggleSidebar}>Home</Link></li>
-          <li><Link to="/men" onClick={toggleSidebar}>Men</Link></li>
-          <li><Link to="/women" onClick={toggleSidebar}>Women</Link></li>
-          <li><Link to="/kids" onClick={toggleSidebar}>Kids</Link></li>
-          <li><Link to="/contact" onClick={toggleSidebar}>Contact</Link></li>
+          <li className='ms-2 border-bottom mx-4'><Link to="/" onClick={toggleSidebar}>Home</Link></li>
+          <li className='ms-2 border-bottom mx-4'><Link to="/men" onClick={toggleSidebar}>Men</Link></li>
+          <li className='ms-2 border-bottom mx-4'><Link to="/women" onClick={toggleSidebar}>Women</Link></li>
+          <li className='ms-2 border-bottom mx-4'><Link to="/kids" onClick={toggleSidebar}>Kids</Link></li>
+          <li className='ms-2 border-bottom mx-4'><Link to="/contact" onClick={toggleSidebar}>Contact</Link></li>
         </ul>
       </nav>
     </>
