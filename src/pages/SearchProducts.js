@@ -60,7 +60,10 @@ const SearchProducts = () => {
   let NotFound = () => {
     return (
       <>
-        <h5 className='text-center mt-5 py-5' style={{ marginBottom: "300px" }}>Product Not Found</h5>
+        <div className='text-center mt-5 py-5' style={{ marginBottom: "300px" }}>
+          <h5>Product Not Found</h5>
+          <div className='mt-3'><span>Go to </span><Link to="/" className='btn btn-outline-dark '>Home Page</Link></div>
+        </div>
       </>
     )
   }

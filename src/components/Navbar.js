@@ -15,63 +15,85 @@ const Navbar = () => {
 
   useEffect(() => {
     gsap.set("#navMenu", { x: "-100%" });
+    gsap.set("#search-field", {
+      opacity: 0,
+      visibility: "hidden",
+      y: -20,
+    });
   }, []);
+  
 
   const toggleSidebar = () => {
-    if (!sidebar) {
-      gsap.to("#navMenu", {
-        x: "0%",
-        duration: 1,    
-        ease: "power4.out",
-      });
-    } else {
-      gsap.to("#navMenu", {
-        x: "-100%",
-        duration: 1,
-        ease: "power4.in",
-      });
-    }
+    gsap.to("#navMenu", {
+      x: sidebar ? "-100%" : "0%",
+      duration: 0.8,
+      ease: "power4.inOut",
+    });
     setSidebar(!sidebar);
+
+    // close search if open
+    if (searchActive) toggleSearch();
   };
 
   const toggleSearch = () => {
+    if (!searchActive) {
+      gsap.to("#search-field", {
+        opacity: 1,
+        visibility: "visible",
+        pointerEvents: "auto",
+        y: 0,
+        duration: 0.5,
+        ease: "power3.out",
+      });
+    } else {
+      gsap.to("#search-field", {
+        opacity: 0,
+        // visibility: "hidden",
+        pointerEvents: "none",
+        y: -20,
+        duration: 0.5,
+        ease: "power3.in",
+      });
+    }
+  
     setSearchActive(!searchActive);
-
+  
+    // sidebar open ho to band karo
     if (sidebar) {
-      gsap.to("#navMenu", { x: "-100%", duration: 3 });
+      gsap.to("#navMenu", { x: "-100%", duration: 0.6 });
       setSidebar(false);
     }
   };
-
-  const getValue = (e) => setSearch(e.target.value);
+  
 
   const handleKeyPress = (e) => {
-    if (e.key === 'Enter' && search.trim() !== '') {
+    if (e.key === 'Enter' && search.trim()) {
       window.location.href = `/getProducts/${search}`;
     }
   };
 
   return (
     <>
-      <nav className="navbar navbar-left d-flex align-items-center position-relative">
+      <nav style={{zIndex:1}} className="navbar d-flex align-items-center position-relative">
         <div className="d-flex align-items-center gap-3">
           <FaBars className="menu-bars" onClick={toggleSidebar} />
-          <Link to="/" className="navbar-brand fw-semibold fs-3 mb-0">Krist</Link>
+          <Link to="/" className="navbar-brand fw-semibold fs-3">Krist</Link>
         </div>
 
         <div className="d-none d-sm-block">
-          <ul className="navbar-nav navbar-icons flex-row gap-4 position-absolute top-50 start-50 translate-middle">
-            <li className="nav-item"><Link className="nav-link" to="/">Home</Link></li>
-            <li className="nav-item"><Link className="nav-link" to="/men">Men</Link></li>
-            <li className="nav-item"><Link className="nav-link" to="/women">Women</Link></li>
-            <li className="nav-item"><Link className="nav-link" to="/kids">Kids</Link></li>
-            <li className="nav-item"><Link className="nav-link" to="/contact">Contact</Link></li>
+          <ul className="navbar-nav flex-row gap-4 position-absolute top-50 start-50 translate-middle">
+            <li><Link className='nav-link' to="/">Home</Link></li>
+            <li><Link className='nav-link' to="/men">Men</Link></li>
+            <li><Link className='nav-link' to="/women">Women</Link></li>
+            <li><Link className='nav-link' to="/kids">Kids</Link></li>
+            <li><Link className='nav-link' to="/contact">Contact</Link></li>
           </ul>
         </div>
 
         <div className="d-flex align-items-center gap-3 ms-auto">
           <FaSearch className="icon" onClick={toggleSearch} />
           <FaHeart className="icon d-none d-sm-block" />
+
           <Link to="/cart">
             <Badge badgeContent={data.length} color="primary">
               <FaShoppingCart className="icon" />
@@ -86,30 +108,29 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <div className={`search-field ${searchActive ? 'active' : ''}`}>
+      {/* SEARCH */}
+      <div style={{zIndex:0}} id="search-field" className="search-field">
         <input
           type="text"
           placeholder="Search..."
+          className='w-100'
           value={search}
-          onChange={getValue}
-          onKeyPress={handleKeyPress}
+          onChange={(e) => setSearch(e.target.value)}
+          onKeyDown={handleKeyPress}
         />
       </div>
 
+      {/* SIDEBAR */}
       <nav id="navMenu" className="nav-menu">
         <ul className="nav-menu-items">
           <li className="navbar-toggle">
-            <FaTimes
-              className="menu-bars-close"
-              style={{ marginLeft: "85%" }}
-              onClick={toggleSidebar}
-            />
+            <FaTimes className="menu-bars-close" onClick={toggleSidebar} />
           </li>
-          <li className="hoverEffect"><Link to="/" onClick={toggleSidebar}>Home</Link></li>
-          <li className="hoverEffect"><Link to="/men" onClick={toggleSidebar}>Men</Link></li>
-          <li className="hoverEffect"><Link to="/women" onClick={toggleSidebar}>Women</Link></li>
-          <li className="hoverEffect"><Link to="/kids" onClick={toggleSidebar}>Kids</Link></li>
-          <li className="hoverEffect"><Link to="/contact" onClick={toggleSidebar}>Contact</Link></li>
+          <li><Link to="/" onClick={toggleSidebar}>Home</Link></li>
+          <li><Link to="/men" onClick={toggleSidebar}>Men</Link></li>
+          <li><Link to="/women" onClick={toggleSidebar}>Women</Link></li>
+          <li><Link to="/kids" onClick={toggleSidebar}>Kids</Link></li>
+          <li><Link to="/contact" onClick={toggleSidebar}>Contact</Link></li>
         </ul>
       </nav>
     </>
