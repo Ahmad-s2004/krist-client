@@ -177,9 +177,7 @@ const Men = () => {
 
   return (
 
-    <>
-      {loading ? <ShowProduct /> : <Loader />}
-    </>
+    <> {loading ? <ShowProduct /> : <Loader />}</>
 
   )
 }
