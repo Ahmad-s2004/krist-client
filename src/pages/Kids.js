@@ -167,9 +167,7 @@ const Kids = () => {
 
 
   return (
-    <>
-      {loading ? <Loader /> : <ShowProduct />}
-    </>
+    <> {loading ? <Loader /> : <ShowProduct />} </>
   );
 };
 
