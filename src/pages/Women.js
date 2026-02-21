@@ -181,9 +181,7 @@ const Women = () => {
 
   return (
 
-    <>
-      {loading ? <ShowProduct /> : <Loader />}
-    </>
+    <> {loading ? <ShowProduct /> : <Loader />}</>
 
   )
 }
