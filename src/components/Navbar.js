@@ -106,7 +106,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <div style={{zIndex:998}} id="search-field" className="d-block d-md-none search-field mt-2">
+      <div style={{zIndex:998}} id="search-field" className="d-block d-md-none items-text search-field mt-2">
         <input
           type="text"
           placeholder="Search..."
